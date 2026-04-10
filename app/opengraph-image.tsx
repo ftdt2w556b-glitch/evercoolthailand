@@ -5,6 +5,8 @@ export const alt = "Evercool Thailand — IAQ & HVAC Specialists";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+const CHIPS = ["20+ Years", "ISO Certified", "Bangkok · Koh Tao"];
+
 export default function OgImage() {
   return new ImageResponse(
     (
@@ -21,7 +23,7 @@ export default function OgImage() {
           fontFamily: "sans-serif",
         }}
       >
-        {/* Logo mark */}
+        {/* Logo mark — absolute top-right */}
         <div
           style={{
             position: "absolute",
@@ -46,6 +48,7 @@ export default function OgImage() {
         {/* Tag */}
         <div
           style={{
+            display: "flex",
             background: "rgba(0,178,212,0.2)",
             border: "1px solid rgba(0,178,212,0.4)",
             borderRadius: 30,
@@ -54,37 +57,58 @@ export default function OgImage() {
             fontSize: 16,
             color: "#00b2d4",
             fontWeight: 600,
-            letterSpacing: "0.05em",
           }}
         >
           HVAC · IAQ · Thailand
         </div>
 
-        {/* Headline */}
+        {/* Headline row 1 */}
         <div
           style={{
-            fontSize: 64,
+            display: "flex",
+            fontSize: 72,
             fontWeight: 900,
             color: "#ffffff",
-            lineHeight: 1.1,
-            marginBottom: 16,
+            lineHeight: 1,
+            marginBottom: 4,
           }}
         >
-          Ever<span style={{ color: "#00b2d4" }}>Cool</span>
-          <br />Thailand
+          Ever
+        </div>
+        {/* Headline row 2 — teal word */}
+        <div
+          style={{
+            display: "flex",
+            fontSize: 72,
+            fontWeight: 900,
+            color: "#00b2d4",
+            lineHeight: 1,
+            marginBottom: 4,
+          }}
+        >
+          Cool Thailand
         </div>
 
         {/* Tagline */}
-        <div style={{ fontSize: 24, color: "rgba(255,255,255,0.65)", marginBottom: 40, fontWeight: 400 }}>
+        <div
+          style={{
+            display: "flex",
+            fontSize: 24,
+            color: "rgba(255,255,255,0.65)",
+            marginBottom: 40,
+            fontWeight: 400,
+          }}
+        >
           Breathing Life into Your Indoors
         </div>
 
         {/* Trust chips */}
         <div style={{ display: "flex", gap: 12 }}>
-          {["20+ Years Experience", "ISO Certified", "Bangkok · Koh Tao · Surat Thani"].map((chip) => (
+          {CHIPS.map((chip) => (
             <div
               key={chip}
               style={{
+                display: "flex",
                 background: "rgba(255,255,255,0.08)",
                 border: "1px solid rgba(255,255,255,0.15)",
                 borderRadius: 20,
