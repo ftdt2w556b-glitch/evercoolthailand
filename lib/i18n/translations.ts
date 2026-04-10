@@ -120,6 +120,24 @@ const en = {
   installIOSSafari: "Open in Safari to install",
   installDismiss: "Not Now",
 
+  // Account / customer portal
+  accountTitle: "My Account",
+  accountSignIn: "Sign In",
+  accountEmailLabel: "Email Address",
+  accountMagicLinkBtn: "Send Sign-in Link",
+  accountCheckEmail: "Check Your Email",
+  accountCheckEmailMsg: "We sent a sign-in link to",
+  accountSignOut: "Sign Out",
+  accountProfile: "Profile",
+  accountMyQuotes: "My Quotes",
+  accountMyBookings: "My Bookings",
+  accountNoQuotes: "No quotes submitted yet",
+  accountNoBookings: "No bookings yet",
+  accountGetStarted: "Get a quote or book a service to get started.",
+  accountSaveProfile: "Save Profile",
+  accountProfileSaved: "Saved!",
+  accountAuthDesc: "Sign in to view your quotes, bookings, and service history.",
+
   // Services page
   servicesTitle: "All Services",
   servicesSubtitle: "Professional HVAC & IAQ solutions tailored for Thailand's climate",
@@ -338,6 +356,24 @@ const th: typeof en = {
   installIOSStep2: "เลื่อนลงแล้วแตะ \"เพิ่มลงหน้าจอโฮม\"",
   installIOSSafari: "เปิดใน Safari เพื่อติดตั้ง",
   installDismiss: "ไว้ก่อน",
+
+  // Account / customer portal
+  accountTitle: "บัญชีของฉัน",
+  accountSignIn: "เข้าสู่ระบบ",
+  accountEmailLabel: "อีเมลของคุณ",
+  accountMagicLinkBtn: "ส่งลิงก์เข้าสู่ระบบ",
+  accountCheckEmail: "ตรวจสอบอีเมลของคุณ",
+  accountCheckEmailMsg: "เราส่งลิงก์เข้าสู่ระบบไปที่",
+  accountSignOut: "ออกจากระบบ",
+  accountProfile: "โปรไฟล์",
+  accountMyQuotes: "ใบเสนอราคาของฉัน",
+  accountMyBookings: "การจองของฉัน",
+  accountNoQuotes: "ยังไม่มีใบเสนอราคา",
+  accountNoBookings: "ยังไม่มีการจอง",
+  accountGetStarted: "ขอใบเสนอราคาหรือจองบริการเพื่อเริ่มต้น",
+  accountSaveProfile: "บันทึกโปรไฟล์",
+  accountProfileSaved: "บันทึกแล้ว!",
+  accountAuthDesc: "เข้าสู่ระบบเพื่อดูใบเสนอราคา การจอง และประวัติบริการ",
 
   // Services page
   servicesTitle: "บริการทั้งหมด",
