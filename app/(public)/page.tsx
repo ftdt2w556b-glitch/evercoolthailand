@@ -167,13 +167,13 @@ export default function HomePage() {
         <div className="mb-5 relative">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold mb-5 border border-white/15">
             <span className="w-1.5 h-1.5 rounded-full bg-ec-green-light animate-pulse" />
-            Thailand&apos;s IAQ &amp; HVAC Specialists
+            Licensed HVAC Contractor · Bangkok &amp; Islands
           </div>
           <h1 className="text-[2rem] font-black leading-[1.15] mb-3 tracking-tight">
             {t.heroTagline}
           </h1>
           <p className="text-sm text-white/70 leading-relaxed max-w-[300px]">
-            {t.heroSubtitle}
+            AC installation, repair, maintenance &amp; air purifiers. Serving Bangkok, Koh Tao and Surat Thani.
           </p>
         </div>
 
