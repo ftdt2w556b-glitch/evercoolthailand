@@ -22,7 +22,7 @@ export default async function LearnPage() {
   const allArticles = articles ?? [];
 
   return (
-    <main className="page-enter px-4 pt-6 pb-8">
+    <main className="page-enter px-4 md:px-10 pt-6 pb-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-ec-text">Learning Hub</h1>
         <p className="text-sm text-ec-text-muted mt-1">AC guides, IAQ tips &amp; calculators</p>

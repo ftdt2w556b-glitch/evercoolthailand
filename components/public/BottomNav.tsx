@@ -63,7 +63,7 @@ export default function BottomNav() {
   }
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-40 bg-ec-card/95 backdrop-blur-sm border-t border-ec-border safe-area-bottom">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-ec-card/95 backdrop-blur-sm border-t border-ec-border safe-area-bottom">
       <div className="mx-auto max-w-[480px] flex justify-around py-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))]">
         {NAV_ITEMS.map((item) => {
           const active = isActive(item.href);

@@ -1,39 +1,99 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/lib/i18n/useLanguage";
 import { useTheme } from "@/lib/theme";
 import LanguageSwitcher from "./LanguageSwitcher";
 
+const DESKTOP_NAV = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/book", label: "Book" },
+  { href: "/learn", label: "Learn" },
+  { href: "/contact", label: "Contact" },
+];
+
 export default function TopBar() {
   const { lang, t, setLang } = useLanguage();
   const { toggleTheme } = useTheme();
+  const pathname = usePathname();
+
+  function isActive(href: string) {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  }
 
   return (
-    <header className="sticky top-0 z-40 bg-ec-navy/95 backdrop-blur-sm text-white">
-      <div className="flex items-center justify-between px-4 py-2.5">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-ec-teal flex items-center justify-center text-white font-bold text-xs">
-            EC
-          </div>
-          <span className="font-semibold text-sm tracking-wide">Evercool</span>
+    <header className="sticky top-0 z-40 bg-ec-navy/95 backdrop-blur-sm text-white border-b border-white/5">
+      <div className="mx-auto max-w-[480px] md:max-w-3xl lg:max-w-5xl flex items-center justify-between px-4 py-2">
+
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2.5 shrink-0">
+          <Image
+            src="/logo.png"
+            alt="EverCool Thailand"
+            width={120}
+            height={40}
+            className="h-8 w-auto"
+            style={{ filter: "brightness(0) invert(1)" }}
+            priority
+          />
         </Link>
 
+        {/* Desktop nav links */}
+        <nav className="hidden md:flex items-center gap-1">
+          {DESKTOP_NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                isActive(item.href)
+                  ? "bg-white/10 text-white"
+                  : "text-white/70 hover:text-white hover:bg-white/8"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Right side actions */}
         <div className="flex items-center gap-1">
+          {/* Phone - visible on desktop */}
           <a
             href="tel:+66955622892"
-            className="flex items-center gap-1 px-2 py-1 rounded-lg text-xs hover:bg-white/10 transition-colors"
+            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-white/70 hover:text-white hover:bg-white/10 transition-colors mr-1"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            095-562-2892
+          </a>
+
+          {/* Get Quote CTA - desktop only */}
+          <Link
+            href="/quote"
+            className="hidden md:block bg-ec-teal hover:bg-ec-teal-light text-white text-sm font-semibold px-4 py-1.5 rounded-xl transition-colors mr-2"
+          >
+            Get Quote
+          </Link>
+
+          {/* Phone icon - mobile only */}
+          <a
+            href="tel:+66955622892"
+            className="md:hidden flex items-center gap-1 px-2 py-1.5 rounded-lg text-xs text-white/70 hover:text-white hover:bg-white/10 transition-colors"
             aria-label={t.callUs}
           >
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            <span className="hidden sm:inline">095-562-2892</span>
           </a>
 
           <button
             onClick={toggleTheme}
-            className="p-1.5 rounded-lg hover:bg-white/10 transition-colors"
+            className="p-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors"
             aria-label="Toggle theme"
           >
             <svg className="w-4 h-4 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

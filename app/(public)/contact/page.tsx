@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="page-enter px-4 pt-6 pb-8">
+    <main className="page-enter px-4 md:px-10 pt-6 pb-8">
       {/* Header */}
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-ec-text">Contact Us</h1>

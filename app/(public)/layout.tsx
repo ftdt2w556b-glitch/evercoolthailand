@@ -12,10 +12,10 @@ export default function PublicLayout({
   return (
     <div className="min-h-dvh flex flex-col">
       <TopBar />
-      <div className="mx-auto w-full max-w-[480px] flex-1 pb-nav">
+      <div className="mx-auto w-full max-w-[480px] md:max-w-3xl lg:max-w-5xl flex-1 pb-nav md:pb-12">
         {children}
       </div>
-      <div className="mx-auto w-full max-w-[480px]">
+      <div className="mx-auto w-full max-w-[480px] md:max-w-3xl lg:max-w-5xl">
         <Footer />
       </div>
       <BottomNav />

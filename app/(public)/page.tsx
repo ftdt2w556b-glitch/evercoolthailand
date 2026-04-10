@@ -158,35 +158,35 @@ export default function HomePage() {
   return (
     <main className="page-enter">
       {/* Hero Section */}
-      <section className="hero-bg text-white px-5 pt-10 pb-14 relative overflow-hidden">
+      <section className="hero-bg text-white px-5 pt-10 pb-10 md:px-10 md:pt-14 md:pb-14 relative overflow-hidden">
         {/* Decorative rings */}
         <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border border-white/5 pointer-events-none" />
         <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full border border-white/8 pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
 
-        <div className="mb-5 relative">
+        <div className="md:max-w-xl relative">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold mb-5 border border-white/15">
             <span className="w-1.5 h-1.5 rounded-full bg-ec-green-light animate-pulse" />
             Licensed HVAC Contractor · Bangkok &amp; Islands
           </div>
-          <h1 className="text-[2rem] font-black leading-[1.15] mb-3 tracking-tight">
+          <h1 className="text-[2rem] md:text-5xl font-black leading-[1.15] mb-3 tracking-tight">
             {t.heroTagline}
           </h1>
-          <p className="text-sm text-white/70 leading-relaxed max-w-[300px]">
+          <p className="text-sm md:text-base text-white/70 leading-relaxed max-w-[340px]">
             AC installation, repair, maintenance &amp; air purifiers. Serving Bangkok, Koh Tao and Surat Thani.
           </p>
         </div>
 
-        <div className="flex flex-col gap-3 relative">
+        <div className="flex flex-col sm:flex-row gap-3 mt-6 relative md:max-w-sm">
           <Link
             href="/quote"
-            className="bg-ec-teal hover:bg-ec-teal-light text-white font-bold text-[15px] rounded-2xl py-4 text-center shadow-lg shadow-ec-teal/30 transition-all active:scale-[0.98]"
+            className="flex-1 bg-ec-teal hover:bg-ec-teal-light text-white font-bold text-[15px] rounded-2xl py-4 text-center shadow-lg shadow-ec-teal/30 transition-all active:scale-[0.98]"
           >
             {t.heroQuoteBtn}
           </Link>
           <Link
             href="/book"
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold text-sm rounded-2xl py-3.5 text-center border border-white/20 transition-all active:scale-[0.98]"
+            className="flex-1 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold text-sm rounded-2xl py-3.5 text-center border border-white/20 transition-all active:scale-[0.98]"
           >
             {t.heroBookBtn}
           </Link>
@@ -194,7 +194,7 @@ export default function HomePage() {
       </section>
 
       {/* Trust Bar */}
-      <section className="px-4 -mt-6">
+      <section className="px-4 md:px-10 pt-6">
         <div className="bg-ec-card rounded-2xl shadow-xl border border-ec-border p-4">
           <div className="grid grid-cols-4 divide-x divide-ec-border/50">
             {TRUST_ITEMS.map((item) => (
@@ -209,14 +209,14 @@ export default function HomePage() {
       </section>
 
       {/* Services Grid */}
-      <section className="px-4 mt-7">
+      <section className="px-4 md:px-10 mt-7">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-[17px] font-bold text-ec-text">{t.navServices}</h2>
           <Link href="/services" className="text-xs font-semibold text-ec-teal hover:underline">
             {t.viewAllServices} &rarr;
           </Link>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {SERVICES.map((svc) => (
             <Link
               key={svc.key}
@@ -238,10 +238,10 @@ export default function HomePage() {
       </section>
 
       {/* IAQ Highlights */}
-      <section className="px-4 mt-8">
+      <section className="px-4 md:px-10 mt-8">
         <h2 className="text-[17px] font-bold text-ec-text mb-1">{t.iaqTitle}</h2>
         <p className="text-xs text-ec-text-muted mb-4">Thailand&apos;s climate demands superior indoor air quality</p>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col md:flex-row gap-3">
           {IAQ_ITEMS.map((item) => (
             <div
               key={item.key}
@@ -262,7 +262,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="px-4 mt-8">
+      <section className="px-4 md:px-10 mt-8">
         <div className="bg-ec-navy rounded-2xl p-5 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-28 h-28 rounded-full bg-ec-teal/10 -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           <h2 className="text-base font-bold mb-4 relative">Why Evercool Thailand?</h2>
@@ -293,7 +293,7 @@ export default function HomePage() {
       <TestimonialsCarousel />
 
       {/* See Our Work */}
-      <section className="px-4 mt-4">
+      <section className="px-4 md:px-10 mt-4">
         <Link
           href="/gallery"
           className="flex items-center justify-between bg-ec-card rounded-2xl border border-ec-border p-4 hover:border-ec-teal/30 transition-all active:scale-[0.98]"
@@ -316,7 +316,7 @@ export default function HomePage() {
       </section>
 
       {/* WhatsApp CTA */}
-      <section className="px-4 mt-3 mb-8">
+      <section className="px-4 md:px-10 mt-3 mb-8">
         <a
           href="https://wa.me/66955622892"
           target="_blank"

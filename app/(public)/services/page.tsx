@@ -20,7 +20,7 @@ export default async function ServicesPage() {
   const allServices = services ?? [];
 
   return (
-    <main className="page-enter px-4 pt-6 pb-8">
+    <main className="page-enter px-4 md:px-10 pt-6 pb-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-ec-text leading-tight">All Services</h1>
         <p className="text-sm text-ec-text-muted mt-1">
