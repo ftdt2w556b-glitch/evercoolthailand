@@ -1,0 +1,25 @@
+{
+  "name": "Evercool Thailand",
+  "short_name": "Evercool",
+  "description": "Thailand's IAQ & HVAC specialists — AC installation, repair, maintenance, and air quality solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#00b2d4",
+  "background_color": "#003554",
+  "categories": ["business", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
