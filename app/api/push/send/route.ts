@@ -2,17 +2,13 @@ import { NextResponse } from "next/server";
 import webpush from "web-push";
 import { createAdminClient } from "@/lib/supabase/server";
 
+export const dynamic = "force-dynamic";
+
 // VAPID keys — generate once: npx web-push generate-vapid-keys
 // Then set in .env.local / Vercel:
 //   VAPID_PUBLIC_KEY=...
 //   VAPID_PRIVATE_KEY=...
 //   VAPID_SUBJECT=mailto:info@evercoolthailand.com
-
-webpush.setVapidDetails(
-  process.env.VAPID_SUBJECT ?? "mailto:info@evercoolthailand.com",
-  process.env.VAPID_PUBLIC_KEY ?? "",
-  process.env.VAPID_PRIVATE_KEY ?? ""
-);
 
 export async function POST(request: Request) {
   // Verify admin — must include admin API key header
@@ -20,6 +16,18 @@ export async function POST(request: Request) {
   if (authHeader !== process.env.ADMIN_API_KEY) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+
+  const vapidPublic = process.env.VAPID_PUBLIC_KEY;
+  const vapidPrivate = process.env.VAPID_PRIVATE_KEY;
+  if (!vapidPublic || !vapidPrivate) {
+    return NextResponse.json({ error: "Push notifications not configured" }, { status: 503 });
+  }
+
+  webpush.setVapidDetails(
+    process.env.VAPID_SUBJECT ?? "mailto:info@evercoolthailand.com",
+    vapidPublic,
+    vapidPrivate
+  );
 
   try {
     const body = await request.json() as {
