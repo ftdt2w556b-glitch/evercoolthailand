@@ -56,14 +56,30 @@ export default function ContactPage() {
         <div className="flex gap-3">
           <div className="flex-1 bg-ec-card rounded-2xl border border-ec-border p-4">
             <p className="text-xs font-semibold text-ec-text-muted uppercase tracking-wide mb-1">Hours</p>
-            <p className="text-sm font-semibold text-ec-text">Mon–Sat</p>
-            <p className="text-xs text-ec-text-muted">8:00 – 18:00</p>
+            <p className="text-sm font-semibold text-ec-text">Mon to Sat</p>
+            <p className="text-xs text-ec-text-muted">8:00 to 18:00</p>
           </div>
           <div className="flex-1 bg-ec-card rounded-2xl border border-ec-border p-4">
             <p className="text-xs font-semibold text-ec-text-muted uppercase tracking-wide mb-1">Areas</p>
             <p className="text-sm font-semibold text-ec-text">Bangkok</p>
             <p className="text-xs text-ec-text-muted">Koh Tao • Surat</p>
           </div>
+        </div>
+
+        {/* Address */}
+        <div className="bg-ec-card rounded-2xl border border-ec-border p-4">
+          <p className="text-xs font-semibold text-ec-text-muted uppercase tracking-wide mb-1">Office Address</p>
+          <p className="text-sm font-semibold text-ec-text">383 (3rd Floor) Bond Street Road</p>
+          <p className="text-xs text-ec-text-muted">Bangphut, Pakkret, Nonthaburi 11120</p>
+          <p className="text-xs text-ec-text-muted">Thailand</p>
+          <a
+            href="https://maps.google.com/?q=383+Bond+Street+Road+Bangphut+Pakkret+Nonthaburi+Thailand"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-ec-teal hover:underline mt-2 inline-block"
+          >
+            Open in Google Maps
+          </a>
         </div>
       </div>
 

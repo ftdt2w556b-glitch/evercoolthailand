@@ -97,6 +97,13 @@ export default function Footer() {
           </a>
         </div>
 
+        {/* Address */}
+        <div className="mb-5">
+          <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Office</p>
+          <p className="text-xs text-white/50">383 (3rd Floor) Bond Street Road</p>
+          <p className="text-xs text-white/50">Bangphut, Pakkret, Nonthaburi 11120, Thailand</p>
+        </div>
+
         {/* Area tags */}
         <div className="flex flex-wrap gap-2 mb-6">
           {["Bangkok", "Koh Tao", "Surat Thani"].map((area) => (
@@ -109,7 +116,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-4 flex flex-col gap-1">
           <p className="text-[10px] text-white/30">© {year} Evercool Thailand Co., Ltd. All rights reserved.</p>
-          <p className="text-[10px] text-white/30">Mon–Sat 08:00–18:00 · Licensed HVAC Contractor</p>
+          <p className="text-[10px] text-white/30">Mon to Sat 08:00 to 18:00 · Licensed HVAC Contractor</p>
         </div>
       </div>
     </footer>
