@@ -37,6 +37,16 @@ const FILTERS: { key: FilterKey; labelKey: TranslationKey }[] = [
   { key: "distribution", labelKey: "servicesFilterDistribution" },
 ];
 
+const CATEGORY_STYLE: Record<string, { bg: string; text: string; label: string }> = {
+  installation: { bg: "bg-sky-500/10", text: "text-sky-600", label: "Installation" },
+  repair: { bg: "bg-orange-500/10", text: "text-orange-600", label: "Repair" },
+  maintenance: { bg: "bg-emerald-500/10", text: "text-emerald-700", label: "Maintenance" },
+  purification: { bg: "bg-cyan-500/10", text: "text-cyan-600", label: "Purification" },
+  custom: { bg: "bg-violet-500/10", text: "text-violet-600", label: "Custom" },
+  consultation: { bg: "bg-amber-500/10", text: "text-amber-600", label: "Consultation" },
+  distribution: { bg: "bg-slate-500/10", text: "text-slate-600", label: "Distribution" },
+};
+
 export default function ServicesGrid({ services }: { services: Service[] }) {
   const { t, lang } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
@@ -50,15 +60,15 @@ export default function ServicesGrid({ services }: { services: Service[] }) {
   return (
     <div>
       {/* Filter Pills */}
-      <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide px-4 -mx-4">
+      <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4">
         {FILTERS.map((f) => (
           <button
             key={f.key}
             onClick={() => setActiveFilter(f.key)}
-            className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
+            className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
               activeFilter === f.key
                 ? "bg-ec-teal text-white shadow-sm"
-                : "bg-ec-card border border-ec-border text-ec-text-muted hover:border-ec-teal/30"
+                : "bg-ec-card border border-ec-border text-ec-text-muted hover:border-ec-teal/40"
             }`}
           >
             {t[f.labelKey]}
@@ -72,6 +82,7 @@ export default function ServicesGrid({ services }: { services: Service[] }) {
           const isExpanded = expandedId === svc.id;
           const name = lang === "th" ? svc.name_th : svc.name_en;
           const description = lang === "th" ? svc.description_th : svc.description_en;
+          const style = CATEGORY_STYLE[svc.category] ?? CATEGORY_STYLE.custom;
 
           return (
             <div
@@ -81,15 +92,23 @@ export default function ServicesGrid({ services }: { services: Service[] }) {
               {/* Card Header */}
               <button
                 onClick={() => setExpandedId(isExpanded ? null : svc.id)}
-                className="w-full flex items-center gap-3 p-4 text-left"
+                className="w-full flex items-center gap-3.5 p-4 text-left"
               >
-                <span className="text-2xl shrink-0">{svc.icon}</span>
+                {/* Icon */}
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 text-xl ${style.bg}`}>
+                  {svc.icon}
+                </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-sm font-semibold text-ec-text leading-tight">
-                    {name}
-                  </h3>
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <h3 className="text-sm font-semibold text-ec-text leading-tight">
+                      {name}
+                    </h3>
+                    <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-md ${style.bg} ${style.text} shrink-0`}>
+                      {style.label}
+                    </span>
+                  </div>
                   {!isExpanded && (
-                    <p className="text-xs text-ec-text-muted mt-0.5 line-clamp-1">
+                    <p className="text-xs text-ec-text-muted line-clamp-1">
                       {description}
                     </p>
                   )}
@@ -115,7 +134,7 @@ export default function ServicesGrid({ services }: { services: Service[] }) {
                   </p>
                   <Link
                     href={`/quote?service=${svc.slug}`}
-                    className="block w-full text-center bg-ec-teal hover:bg-ec-teal-light text-white font-semibold text-sm rounded-xl py-2.5 transition-all active:scale-[0.98]"
+                    className="block w-full text-center bg-ec-teal hover:bg-ec-teal-light text-white font-semibold text-sm rounded-xl py-3 transition-all active:scale-[0.98]"
                   >
                     {t.requestService}
                   </Link>

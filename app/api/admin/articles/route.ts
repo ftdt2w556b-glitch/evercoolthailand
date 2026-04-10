@@ -16,9 +16,9 @@ export async function POST(request: Request) {
   if (!await verifyAdmin()) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const body = await request.json();
   const admin = createAdminClient();
-  // Auto-generate slug from title if not provided
-  if (!body.slug && body.title) {
-    body.slug = body.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  // Auto-generate slug from title_en if not provided
+  if (!body.slug && body.title_en) {
+    body.slug = body.title_en.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   }
   const { data, error } = await admin.from("articles").insert(body).select("id").single();
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });

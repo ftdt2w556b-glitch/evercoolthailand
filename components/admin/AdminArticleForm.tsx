@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 
 type Article = {
   id: string;
-  title: string;
+  title_en: string;
   slug: string;
   category: string;
-  read_time_minutes: number;
-  published: boolean;
+  read_time_mins: number;
+  is_published: boolean;
 };
 
 const CATEGORIES = ["maintenance", "buying-guide", "iaq", "tips"];
@@ -20,16 +20,16 @@ export default function AdminArticleForm({ article }: { article?: Article }) {
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState({
-    title: article?.title ?? "",
+    title_en: article?.title_en ?? "",
     title_th: "",
     slug: article?.slug ?? "",
     category: article?.category ?? "maintenance",
-    summary: "",
-    summary_th: "",
-    content: "",
+    excerpt_en: "",
+    excerpt_th: "",
+    content_en: "",
     content_th: "",
-    read_time_minutes: article?.read_time_minutes ?? 3,
-    published: article?.published ?? false,
+    read_time_mins: article?.read_time_mins ?? 3,
+    is_published: article?.is_published ?? false,
   });
 
   function autoSlug(title: string) {
@@ -76,8 +76,8 @@ export default function AdminArticleForm({ article }: { article?: Article }) {
           <label className="text-xs font-semibold text-ec-text-muted block mb-1">Title (EN)</label>
           <input
             required
-            value={form.title}
-            onChange={(e) => setForm(f => ({ ...f, title: e.target.value, slug: isEdit ? f.slug : autoSlug(e.target.value) }))}
+            value={form.title_en}
+            onChange={(e) => setForm(f => ({ ...f, title_en: e.target.value, slug: isEdit ? f.slug : autoSlug(e.target.value) }))}
             className="w-full rounded-xl border border-ec-border bg-ec-bg px-3 py-2 text-sm text-ec-text focus:outline-none focus:border-ec-teal"
           />
         </div>
@@ -117,18 +117,18 @@ export default function AdminArticleForm({ article }: { article?: Article }) {
             type="number"
             min={1}
             max={60}
-            value={form.read_time_minutes}
-            onChange={(e) => setForm(f => ({ ...f, read_time_minutes: Number(e.target.value) }))}
+            value={form.read_time_mins}
+            onChange={(e) => setForm(f => ({ ...f, read_time_mins: Number(e.target.value) }))}
             className="w-full rounded-xl border border-ec-border bg-ec-bg px-3 py-2 text-sm text-ec-text focus:outline-none focus:border-ec-teal"
           />
         </div>
       </div>
 
       <div>
-        <label className="text-xs font-semibold text-ec-text-muted block mb-1">Summary (EN)</label>
+        <label className="text-xs font-semibold text-ec-text-muted block mb-1">Excerpt (EN)</label>
         <textarea
-          value={form.summary}
-          onChange={(e) => setForm(f => ({ ...f, summary: e.target.value }))}
+          value={form.excerpt_en}
+          onChange={(e) => setForm(f => ({ ...f, excerpt_en: e.target.value }))}
           rows={2}
           className="w-full rounded-xl border border-ec-border bg-ec-bg px-3 py-2 text-sm text-ec-text focus:outline-none focus:border-ec-teal resize-none"
         />
@@ -137,8 +137,8 @@ export default function AdminArticleForm({ article }: { article?: Article }) {
       <div>
         <label className="text-xs font-semibold text-ec-text-muted block mb-1">Content (EN) - separate paragraphs with blank lines</label>
         <textarea
-          value={form.content}
-          onChange={(e) => setForm(f => ({ ...f, content: e.target.value }))}
+          value={form.content_en}
+          onChange={(e) => setForm(f => ({ ...f, content_en: e.target.value }))}
           rows={8}
           className="w-full rounded-xl border border-ec-border bg-ec-bg px-3 py-2 text-sm text-ec-text focus:outline-none focus:border-ec-teal resize-y"
         />
@@ -147,12 +147,12 @@ export default function AdminArticleForm({ article }: { article?: Article }) {
       <div className="flex items-center gap-2">
         <input
           type="checkbox"
-          id="published"
-          checked={form.published}
-          onChange={(e) => setForm(f => ({ ...f, published: e.target.checked }))}
+          id="is_published"
+          checked={form.is_published}
+          onChange={(e) => setForm(f => ({ ...f, is_published: e.target.checked }))}
           className="rounded"
         />
-        <label htmlFor="published" className="text-xs font-semibold text-ec-text-muted">Published (visible on site)</label>
+        <label htmlFor="is_published" className="text-xs font-semibold text-ec-text-muted">Published (visible on site)</label>
       </div>
 
       <div className="flex items-center gap-3">

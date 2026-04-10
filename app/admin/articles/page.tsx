@@ -10,7 +10,7 @@ export default async function AdminArticlesPage() {
   const admin = createAdminClient();
   const { data: articles } = await admin
     .from("articles")
-    .select("id, title, slug, category, read_time_minutes, published, created_at")
+    .select("id, title_en, slug, category, read_time_mins, is_published, created_at")
     .order("created_at", { ascending: false });
 
   const all = articles ?? [];
@@ -34,12 +34,12 @@ export default async function AdminArticlesPage() {
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <p className="text-sm font-bold text-ec-text truncate">{a.title}</p>
-                  <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-lg shrink-0 ${a.published ? "bg-green-500/15 text-green-400" : "bg-amber-500/15 text-amber-400"}`}>
-                    {a.published ? "Published" : "Draft"}
+                  <p className="text-sm font-bold text-ec-text truncate">{a.title_en}</p>
+                  <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-lg shrink-0 ${a.is_published ? "bg-green-500/15 text-green-400" : "bg-amber-500/15 text-amber-400"}`}>
+                    {a.is_published ? "Published" : "Draft"}
                   </span>
                 </div>
-                <p className="text-xs text-ec-text-muted/60">{a.slug} · {a.category} · {a.read_time_minutes} min</p>
+                <p className="text-xs text-ec-text-muted/60">{a.slug} · {a.category} · {a.read_time_mins} min</p>
               </div>
               <div className="flex flex-col items-end gap-2 shrink-0">
                 <AdminArticleForm article={a} />
