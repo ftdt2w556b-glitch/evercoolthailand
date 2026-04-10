@@ -135,7 +135,7 @@ export default function AdminArticleForm({ article }: { article?: Article }) {
       </div>
 
       <div>
-        <label className="text-xs font-semibold text-ec-text-muted block mb-1">Content (EN) — separate paragraphs with blank lines</label>
+        <label className="text-xs font-semibold text-ec-text-muted block mb-1">Content (EN) - separate paragraphs with blank lines</label>
         <textarea
           value={form.content}
           onChange={(e) => setForm(f => ({ ...f, content: e.target.value }))}

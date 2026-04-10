@@ -439,7 +439,7 @@ export default function BookingWizard() {
               </label>
             )}
           </div>
-          <p className="text-xs text-ec-text-muted">{t.optional} — max 3 photos, 5MB each</p>
+          <p className="text-xs text-ec-text-muted">{t.optional} (max 3 photos, 5MB each)</p>
         </div>
       )}
 

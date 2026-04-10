@@ -237,10 +237,10 @@ const en = {
   payCopy: "Copy",
   payCopied: "Copied!",
   payReference: "Ref",
-  payDone: "I've paid — done!",
+  payDone: "I've paid, all done!",
   payLater: "Pay later / request invoice",
   payPromptPay: "Pay deposit via PromptPay",
-  payInvoiceLater: "No payment needed now — we'll invoice after the visit",
+  payInvoiceLater: "No payment needed now. We will invoice after the visit.",
 
   // Push notifications
   pushEnable: "Enable reminders",
@@ -505,10 +505,10 @@ const th: typeof en = {
   payCopy: "คัดลอก",
   payCopied: "คัดลอกแล้ว!",
   payReference: "อ้างอิง",
-  payDone: "ชำระเงินแล้ว — เสร็จ!",
+  payDone: "ชำระเงินแล้ว เสร็จเรียบร้อย!",
   payLater: "จ่ายทีหลัง / ขอใบแจ้งหนี้",
   payPromptPay: "วางมัดจำผ่าน PromptPay",
-  payInvoiceLater: "ไม่ต้องจ่ายตอนนี้ — เราจะออกใบแจ้งหนี้หลังบริการ",
+  payInvoiceLater: "ไม่ต้องจ่ายตอนนี้ เราจะออกใบแจ้งหนี้หลังบริการ",
 
   // Push notifications
   pushEnable: "เปิดการแจ้งเตือน",

@@ -46,7 +46,7 @@ export default function AdminGalleryForm() {
             required
             value={form.title}
             onChange={(e) => setForm(f => ({ ...f, title: e.target.value }))}
-            placeholder="AC Installation — Sukhumvit"
+            placeholder="AC Installation, Sukhumvit"
             className="w-full rounded-xl border border-ec-border bg-ec-bg px-3 py-2 text-sm text-ec-text focus:outline-none focus:border-ec-teal"
           />
         </div>

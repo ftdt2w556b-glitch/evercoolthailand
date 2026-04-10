@@ -35,7 +35,7 @@ export default async function AdminCustomersPage() {
           <div key={c.id} className="bg-ec-card rounded-2xl border border-ec-border p-4">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <p className="text-sm font-bold text-ec-text">{c.name ?? "—"}</p>
+                <p className="text-sm font-bold text-ec-text">{c.name ?? "No name"}</p>
                 <p className="text-xs text-ec-text-muted">{c.email}</p>
                 {c.phone && <p className="text-xs text-ec-text-muted">{c.phone}</p>}
               </div>

@@ -19,7 +19,7 @@ function recommendBTU(area: number, sun: boolean, highCeil: boolean): string {
   const match = BTU_TIERS.find((t) => btu <= t.btu) ?? BTU_TIERS[BTU_TIERS.length - 1];
 
   if (btu > 30000) {
-    return `${Math.ceil(btu / 1000) * 1000} BTU — Multi-zone / Cassette system recommended`;
+    return `${Math.ceil(btu / 1000) * 1000} BTU (Multi-zone or Cassette system recommended)`;
   }
   return match.label;
 }

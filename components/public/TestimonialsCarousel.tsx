@@ -49,7 +49,7 @@ const TESTIMONIALS = [
     location: "Surat Thani",
     service: "Custom AHU",
     rating: 5,
-    en: "We needed a custom air handling solution for our 2,000m² warehouse. Evercool engineered and installed the whole system — professional from quote to commissioning. On time, on budget.",
+    en: "We needed a custom air handling solution for our 2,000m² warehouse. Evercool engineered and installed the whole system. Professional from quote to commissioning. On time, on budget.",
     th: "ต้องการระบบระบายอากาศพิเศษสำหรับโกดัง 2,000 ตร.ม. Evercool ออกแบบและติดตั้งครบ ตรงเวลา ตรงงบ",
   },
   {
