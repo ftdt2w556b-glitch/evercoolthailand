@@ -223,6 +223,31 @@ const en = {
   calcRateTHB: "Rate (THB/kWh)",
   calcEnergyResult: "Est. Monthly Cost",
 
+  // PromptPay payment
+  payTitle: "Pay via PromptPay",
+  payDesc: "Scan the QR code with any Thai banking app",
+  payAmount: "Amount",
+  payPhone: "PromptPay number",
+  payCopy: "Copy",
+  payCopied: "Copied!",
+  payReference: "Ref",
+  payDone: "I've paid — done!",
+  payLater: "Pay later / request invoice",
+  payPromptPay: "Pay deposit via PromptPay",
+  payInvoiceLater: "No payment needed now — we'll invoice after the visit",
+
+  // Push notifications
+  pushEnable: "Enable reminders",
+  pushEnabled: "Reminders on",
+  pushDenied: "Notifications blocked",
+
+  // Loyalty & referral
+  loyaltyPoints: "Loyalty Points",
+  loyaltyPointsDesc: "Earned from bookings & referrals",
+  referralCode: "Referral Code",
+  referralCopy: "Copy link",
+  referralNone: "Complete your first booking to get your code",
+
   // Contact page
   contactTitle: "Contact Us",
   contactSubtitle: "We're here to help with all your HVAC & IAQ needs",
@@ -459,6 +484,31 @@ const th: typeof en = {
   calcDaysMonth: "วันต่อเดือน",
   calcRateTHB: "อัตรา (บาท/หน่วย)",
   calcEnergyResult: "ค่าไฟโดยประมาณ/เดือน",
+
+  // PromptPay payment
+  payTitle: "จ่ายผ่าน PromptPay",
+  payDesc: "สแกน QR ด้วยแอปธนาคารไทยทุกแบงก์",
+  payAmount: "จำนวน",
+  payPhone: "หมายเลข PromptPay",
+  payCopy: "คัดลอก",
+  payCopied: "คัดลอกแล้ว!",
+  payReference: "อ้างอิง",
+  payDone: "ชำระเงินแล้ว — เสร็จ!",
+  payLater: "จ่ายทีหลัง / ขอใบแจ้งหนี้",
+  payPromptPay: "วางมัดจำผ่าน PromptPay",
+  payInvoiceLater: "ไม่ต้องจ่ายตอนนี้ — เราจะออกใบแจ้งหนี้หลังบริการ",
+
+  // Push notifications
+  pushEnable: "เปิดการแจ้งเตือน",
+  pushEnabled: "เปิดแจ้งเตือนแล้ว",
+  pushDenied: "บล็อกการแจ้งเตือน",
+
+  // Loyalty & referral
+  loyaltyPoints: "แต้มสะสม",
+  loyaltyPointsDesc: "สะสมจากการจองและการแนะนำ",
+  referralCode: "รหัสแนะนำ",
+  referralCopy: "คัดลอกลิงก์",
+  referralNone: "จองบริการครั้งแรกเพื่อรับรหัส",
 
   // Contact page
   contactTitle: "ติดต่อเรา",

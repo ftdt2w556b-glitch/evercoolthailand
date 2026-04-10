@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLanguage } from "@/lib/i18n/useLanguage";
+import PromptPaySheet from "@/components/public/PromptPaySheet";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -177,6 +178,8 @@ export default function BookingWizard() {
   const [form, setForm] = useState<BookingForm>(EMPTY_FORM);
   const [photoPreviews, setPhotoPreviews] = useState<string[]>([]);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [bookingId, setBookingId] = useState<string>("");
+  const [showPayment, setShowPayment] = useState(false);
 
   // Pre-fill service from URL param
   useEffect(() => {
@@ -233,6 +236,8 @@ export default function BookingWizard() {
 
       const res = await fetch("/api/bookings", { method: "POST", body: fd });
       if (!res.ok) throw new Error("Failed");
+      const data = await res.json() as { bookingId?: string };
+      if (data.bookingId) setBookingId(data.bookingId);
       setStatus("success");
     } catch {
       setStatus("error");
@@ -251,15 +256,36 @@ export default function BookingWizard() {
           </svg>
         </div>
         <h2 className="text-xl font-bold text-ec-text mb-2">{t.bookSuccess}</h2>
-        <p className="text-sm text-ec-text-muted mb-6 max-w-xs mx-auto">{t.bookSuccessMsg}</p>
-        <a
-          href={`https://wa.me/66955622892?text=${encodeURIComponent(`Hi, I just booked a ${form.serviceName} on ${form.date} at ${form.timeSlot}`)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold text-sm rounded-xl px-5 py-3"
-        >
-          {t.bookWhatsApp}
-        </a>
+        <p className="text-sm text-ec-text-muted mb-4 max-w-xs mx-auto">{t.bookSuccessMsg}</p>
+
+        <div className="flex flex-col gap-3 max-w-xs mx-auto">
+          {/* Pay deposit via PromptPay */}
+          <button
+            onClick={() => setShowPayment(true)}
+            className="w-full bg-ec-teal text-white font-bold text-sm rounded-xl py-3"
+          >
+            {t.payPromptPay}
+          </button>
+
+          {/* WhatsApp */}
+          <a
+            href={`https://wa.me/66955622892?text=${encodeURIComponent(`Hi, I just booked a ${form.serviceName} on ${form.date} at ${form.timeSlot}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold text-sm rounded-xl px-5 py-3"
+          >
+            {t.bookWhatsApp}
+          </a>
+
+          {/* Invoice later */}
+          <p className="text-xs text-ec-text-muted">{t.payInvoiceLater}</p>
+        </div>
+
+        <PromptPaySheet
+          open={showPayment}
+          onClose={() => setShowPayment(false)}
+          reference={bookingId}
+        />
       </main>
     );
   }

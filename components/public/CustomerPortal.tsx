@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { createBrowserClient } from "@supabase/ssr";
 import { useLanguage } from "@/lib/i18n/useLanguage";
+import PushOptIn from "@/components/public/PushOptIn";
 import type { User } from "@supabase/supabase-js";
 
 type Quote = {
@@ -24,6 +25,13 @@ type Booking = {
 type Customer = {
   name: string | null;
   phone: string | null;
+  referral_code: string | null;
+};
+
+type LoyaltyEntry = {
+  points: number;
+  reason: string;
+  created_at: string;
 };
 
 const STATUS_COLORS: Record<string, string> = {
@@ -43,17 +51,30 @@ export default function CustomerPortal({
   customer,
   quotes,
   bookings,
+  loyaltyPoints,
 }: {
   user: User;
   customer: Customer | null;
   quotes: Quote[];
   bookings: Booking[];
+  loyaltyPoints: LoyaltyEntry[];
 }) {
   const { t } = useLanguage();
   const [name, setName] = useState(customer?.name ?? "");
   const [phone, setPhone] = useState(customer?.phone ?? "");
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [codeCopied, setCodeCopied] = useState(false);
+
+  const totalPoints = loyaltyPoints.reduce((sum, e) => sum + e.points, 0);
+
+  async function copyReferralCode() {
+    const code = customer?.referral_code ?? "";
+    if (!code) return;
+    await navigator.clipboard.writeText(`https://evercoolthailand.com?ref=${code}`);
+    setCodeCopied(true);
+    setTimeout(() => setCodeCopied(false), 2000);
+  }
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -82,17 +103,20 @@ export default function CustomerPortal({
   return (
     <div className="flex flex-col gap-5">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-start justify-between gap-3">
         <div>
           <h1 className="text-xl font-bold text-ec-text">{t.accountTitle}</h1>
           <p className="text-xs text-ec-text-muted mt-0.5">{user.email}</p>
         </div>
-        <button
-          onClick={handleSignOut}
-          className="text-xs text-ec-text-muted border border-ec-border rounded-xl px-3 py-2 hover:border-ec-teal/30 transition-colors"
-        >
-          {t.accountSignOut}
-        </button>
+        <div className="flex flex-col items-end gap-2">
+          <button
+            onClick={handleSignOut}
+            className="text-xs text-ec-text-muted border border-ec-border rounded-xl px-3 py-2 hover:border-ec-teal/30 transition-colors"
+          >
+            {t.accountSignOut}
+          </button>
+          <PushOptIn />
+        </div>
       </div>
 
       {/* Profile */}
@@ -128,6 +152,34 @@ export default function CustomerPortal({
             {saved ? t.accountProfileSaved : saving ? t.loading : t.accountSaveProfile}
           </button>
         </form>
+      </div>
+
+      {/* Loyalty + Referral */}
+      <div className="grid grid-cols-2 gap-3">
+        {/* Points */}
+        <div className="bg-ec-card rounded-2xl border border-ec-border p-4 flex flex-col gap-1">
+          <p className="text-[10px] font-semibold text-ec-text-muted uppercase tracking-wider">{t.loyaltyPoints}</p>
+          <p className="text-2xl font-bold text-ec-teal">{totalPoints}</p>
+          <p className="text-[10px] text-ec-text-muted">{t.loyaltyPointsDesc}</p>
+        </div>
+
+        {/* Referral */}
+        <div className="bg-ec-card rounded-2xl border border-ec-border p-4 flex flex-col gap-1">
+          <p className="text-[10px] font-semibold text-ec-text-muted uppercase tracking-wider">{t.referralCode}</p>
+          {customer?.referral_code ? (
+            <>
+              <p className="text-base font-bold font-mono text-ec-text tracking-widest">{customer.referral_code}</p>
+              <button
+                onClick={copyReferralCode}
+                className="self-start text-[10px] text-ec-teal font-semibold hover:underline"
+              >
+                {codeCopied ? t.payCopied : t.referralCopy}
+              </button>
+            </>
+          ) : (
+            <p className="text-xs text-ec-text-muted mt-1">{t.referralNone}</p>
+          )}
+        </div>
       </div>
 
       {/* My Quotes */}

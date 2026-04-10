@@ -25,8 +25,8 @@ export default async function AccountPage() {
   }
 
   // Fetch portal data in parallel
-  const [customerResult, quotesResult, bookingsResult] = await Promise.all([
-    supabase.from("customers").select("name, phone").eq("id", user.id).maybeSingle(),
+  const [customerResult, quotesResult, bookingsResult, loyaltyResult] = await Promise.all([
+    supabase.from("customers").select("name, phone, referral_code").eq("id", user.id).maybeSingle(),
     supabase
       .from("quotes")
       .select("id, service_type, status, created_at")
@@ -39,6 +39,12 @@ export default async function AccountPage() {
       .eq("email", user.email ?? "")
       .order("created_at", { ascending: false })
       .limit(10),
+    supabase
+      .from("loyalty_points")
+      .select("points, reason, created_at")
+      .eq("customer_id", user.id)
+      .order("created_at", { ascending: false })
+      .limit(20),
   ]);
 
   return (
@@ -48,6 +54,7 @@ export default async function AccountPage() {
         customer={customerResult.data}
         quotes={quotesResult.data ?? []}
         bookings={bookingsResult.data ?? []}
+        loyaltyPoints={loyaltyResult.data ?? []}
       />
     </main>
   );
