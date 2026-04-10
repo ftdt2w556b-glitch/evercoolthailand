@@ -35,10 +35,12 @@ export default function OgImage() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: 36,
+            fontSize: 28,
+            fontWeight: 900,
+            color: "#00b2d4",
           }}
         >
-          ❄️
+          EC
         </div>
 
         {/* Tag */}
