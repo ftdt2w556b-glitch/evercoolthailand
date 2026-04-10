@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Reference files (not part of the web app)
+/EverCool Thailand Files/
+.claude/

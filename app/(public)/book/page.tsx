@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/public/PlaceholderPage";
+import { Suspense } from "react";
+import BookingWizard from "@/components/public/BookingWizard";
 
-export const metadata: Metadata = { title: "Book Service" };
+export const metadata: Metadata = {
+  title: "Book a Service",
+  description: "Book AC installation, repair, maintenance, or IAQ consultation in Bangkok, Koh Tao, and Surat Thani.",
+};
 
 export default function BookPage() {
-  return <PlaceholderPage title="Book Service" />;
+  return (
+    <Suspense>
+      <BookingWizard />
+    </Suspense>
+  );
 }

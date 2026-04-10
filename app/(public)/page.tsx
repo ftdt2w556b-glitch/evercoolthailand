@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/useLanguage";
+import TestimonialsCarousel from "@/components/public/TestimonialsCarousel";
 
 const SERVICES = [
   { key: "svcInstall" as const, descKey: "svcInstallDesc" as const, icon: "❄️", href: "/quote?service=ac-installation" },
@@ -129,8 +130,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <TestimonialsCarousel />
+
+      {/* See Our Work */}
+      <section className="px-4 mt-4 mb-2">
+        <Link
+          href="/gallery"
+          className="flex items-center justify-between bg-ec-card rounded-2xl border border-ec-border p-4 hover:border-ec-teal/30 transition-all active:scale-[0.98]"
+        >
+          <div>
+            <p className="text-sm font-bold text-ec-text">{t.seeOurWork}</p>
+            <p className="text-xs text-ec-text-muted mt-0.5">{t.gallerySubtitle}</p>
+          </div>
+          <svg className="w-5 h-5 text-ec-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </section>
+
       {/* WhatsApp CTA */}
-      <section className="px-4 mb-8">
+      <section className="px-4 mt-4 mb-8">
         <a
           href="https://wa.me/66955622892"
           target="_blank"
