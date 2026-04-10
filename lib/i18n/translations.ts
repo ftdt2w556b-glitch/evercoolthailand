@@ -119,6 +119,38 @@ const en = {
   installIOSStep2: "Scroll down and tap \"Add to Home Screen\"",
   installIOSSafari: "Open in Safari to install",
   installDismiss: "Not Now",
+
+  // Services page
+  servicesTitle: "All Services",
+  servicesSubtitle: "Professional HVAC & IAQ solutions tailored for Thailand's climate",
+  servicesFilterAll: "All",
+  servicesFilterInstallation: "Installation",
+  servicesFilterRepair: "Repair",
+  servicesFilterMaintenance: "Maintenance",
+  servicesFilterPurification: "Air Purifiers",
+  servicesFilterCustom: "Custom AHU",
+  servicesFilterDistribution: "Broan",
+  requestService: "Request This Service",
+  showDetails: "Show Details",
+  hideDetails: "Hide Details",
+
+  // Contact page
+  contactTitle: "Contact Us",
+  contactSubtitle: "We're here to help with all your HVAC & IAQ needs",
+  contactFormTitle: "Send a Message",
+  contactSubjectLabel: "Subject",
+  contactMessageLabel: "Message",
+  contactSend: "Send Message",
+  contactSending: "Sending...",
+  contactSuccess: "Message Sent!",
+  contactSuccessMsg: "Thank you! We'll get back to you within 24 hours.",
+  contactCallTitle: "Call Us",
+  contactWhatsApp: "WhatsApp Chat",
+  contactWhatsAppDesc: "Chat with our team on WhatsApp",
+  contactHours: "Office Hours",
+  contactHoursVal: "Mon–Sat: 8:00 – 18:00",
+  contactAreas: "Service Areas",
+  contactAreasVal: "Bangkok • Koh Tao • Surat Thani",
 };
 
 const th: typeof en = {
@@ -235,6 +267,38 @@ const th: typeof en = {
   installIOSStep2: "เลื่อนลงแล้วแตะ \"เพิ่มลงหน้าจอโฮม\"",
   installIOSSafari: "เปิดใน Safari เพื่อติดตั้ง",
   installDismiss: "ไว้ก่อน",
+
+  // Services page
+  servicesTitle: "บริการทั้งหมด",
+  servicesSubtitle: "โซลูชัน HVAC และ IAQ มืออาชีพเหมาะกับภูมิอากาศไทย",
+  servicesFilterAll: "ทั้งหมด",
+  servicesFilterInstallation: "ติดตั้ง",
+  servicesFilterRepair: "ซ่อมแซม",
+  servicesFilterMaintenance: "บำรุงรักษา",
+  servicesFilterPurification: "เครื่องฟอกอากาศ",
+  servicesFilterCustom: "AHU สั่งทำ",
+  servicesFilterDistribution: "Broan",
+  requestService: "ขอใบเสนอราคา",
+  showDetails: "ดูรายละเอียด",
+  hideDetails: "ซ่อนรายละเอียด",
+
+  // Contact page
+  contactTitle: "ติดต่อเรา",
+  contactSubtitle: "เราพร้อมช่วยเหลือด้าน HVAC และ IAQ ทุกความต้องการ",
+  contactFormTitle: "ส่งข้อความ",
+  contactSubjectLabel: "หัวข้อ",
+  contactMessageLabel: "ข้อความ",
+  contactSend: "ส่งข้อความ",
+  contactSending: "กำลังส่ง...",
+  contactSuccess: "ส่งข้อความสำเร็จ!",
+  contactSuccessMsg: "ขอบคุณ! เราจะติดต่อกลับภายใน 24 ชั่วโมง",
+  contactCallTitle: "โทรหาเรา",
+  contactWhatsApp: "แชท WhatsApp",
+  contactWhatsAppDesc: "แชทกับทีมงานของเราทาง WhatsApp",
+  contactHours: "เวลาทำการ",
+  contactHoursVal: "จันทร์–เสาร์: 8:00 – 18:00",
+  contactAreas: "พื้นที่บริการ",
+  contactAreasVal: "กรุงเทพ • เกาะเต่า • สุราษฎร์ธานี",
 };
 
 export const translations: Record<Lang, typeof en> = { en, th };
