@@ -223,6 +223,12 @@ const en = {
   calcRateTHB: "Rate (THB/kWh)",
   calcEnergyResult: "Est. Monthly Cost",
 
+  // PDPA cookie consent
+  cookieMsg: "We use cookies to improve your experience and analyse site traffic. By continuing, you agree to our use of cookies.",
+  cookiePolicy: "Privacy Policy",
+  cookieAccept: "Accept All",
+  cookieDecline: "Decline",
+
   // PromptPay payment
   payTitle: "Pay via PromptPay",
   payDesc: "Scan the QR code with any Thai banking app",
@@ -484,6 +490,12 @@ const th: typeof en = {
   calcDaysMonth: "วันต่อเดือน",
   calcRateTHB: "อัตรา (บาท/หน่วย)",
   calcEnergyResult: "ค่าไฟโดยประมาณ/เดือน",
+
+  // PDPA cookie consent
+  cookieMsg: "เราใช้คุกกี้เพื่อปรับปรุงประสบการณ์และวิเคราะห์การใช้งาน การใช้งานต่อไปถือว่าคุณยอมรับ",
+  cookiePolicy: "นโยบายความเป็นส่วนตัว",
+  cookieAccept: "ยอมรับทั้งหมด",
+  cookieDecline: "ปฏิเสธ",
 
   // PromptPay payment
   payTitle: "จ่ายผ่าน PromptPay",

@@ -5,10 +5,14 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const NAV_ITEMS = [
-  { href: "/admin/dashboard", label: "Dashboard", icon: "⬛" },
-  { href: "/admin/quotes", label: "Quotes", icon: "📋" },
-  { href: "/admin/bookings", label: "Bookings", icon: "📅" },
-  { href: "/admin/messages", label: "Messages", icon: "💬" },
+  { href: "/admin/dashboard", label: "Dashboard" },
+  { href: "/admin/quotes", label: "Quotes" },
+  { href: "/admin/bookings", label: "Bookings" },
+  { href: "/admin/messages", label: "Messages" },
+  { href: "/admin/customers", label: "Customers" },
+  { href: "/admin/services", label: "Services" },
+  { href: "/admin/gallery", label: "Gallery" },
+  { href: "/admin/articles", label: "Articles" },
 ];
 
 export default function AdminNav({ userEmail }: { userEmail: string }) {
