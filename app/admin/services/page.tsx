@@ -10,7 +10,7 @@ export default async function AdminServicesPage() {
   const admin = createAdminClient();
   const { data: services } = await admin
     .from("services")
-    .select("id, name, name_th, slug, category, short_description, is_active")
+    .select("id, name_en, name_th, slug, category, description_en, is_active")
     .order("sort_order", { ascending: true });
 
   const all = services ?? [];
@@ -34,15 +34,15 @@ export default async function AdminServicesPage() {
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <p className="text-sm font-bold text-ec-text truncate">{s.name}</p>
+                  <p className="text-sm font-bold text-ec-text truncate">{s.name_en}</p>
                   <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-lg ${s.is_active ? "bg-green-500/15 text-green-400" : "bg-gray-500/15 text-gray-400"}`}>
                     {s.is_active ? "Active" : "Hidden"}
                   </span>
                 </div>
                 {s.name_th && <p className="text-xs text-ec-text-muted">{s.name_th}</p>}
                 <p className="text-xs text-ec-text-muted/60 mt-1">{s.slug} · {s.category}</p>
-                {s.short_description && (
-                  <p className="text-xs text-ec-text-muted mt-1 line-clamp-2">{s.short_description}</p>
+                {s.description_en && (
+                  <p className="text-xs text-ec-text-muted mt-1 line-clamp-2">{s.description_en}</p>
                 )}
               </div>
               <div className="flex flex-col items-end gap-2 shrink-0">

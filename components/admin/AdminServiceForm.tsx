@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 
 type Service = {
   id: string;
-  name: string;
+  name_en: string;
   name_th: string | null;
   slug: string;
   category: string;
-  short_description: string | null;
+  description_en: string | null;
   is_active: boolean;
 };
 
@@ -21,16 +21,16 @@ export default function AdminServiceForm({ service }: { service?: Service }) {
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState({
-    name: service?.name ?? "",
+    name_en: service?.name_en ?? "",
     name_th: service?.name_th ?? "",
     slug: service?.slug ?? "",
     category: service?.category ?? "installation",
-    short_description: service?.short_description ?? "",
+    description_en: service?.description_en ?? "",
     is_active: service?.is_active ?? true,
   });
 
-  function autoSlug(name: string) {
-    return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  function autoSlug(val: string) {
+    return val.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -77,8 +77,8 @@ export default function AdminServiceForm({ service }: { service?: Service }) {
           <label className="text-xs font-semibold text-ec-text-muted block mb-1">Name (EN)</label>
           <input
             required
-            value={form.name}
-            onChange={(e) => setForm(f => ({ ...f, name: e.target.value, slug: isEdit ? f.slug : autoSlug(e.target.value) }))}
+            value={form.name_en}
+            onChange={(e) => setForm(f => ({ ...f, name_en: e.target.value, slug: isEdit ? f.slug : autoSlug(e.target.value) }))}
             className="w-full rounded-xl border border-ec-border bg-ec-bg px-3 py-2 text-sm text-ec-text focus:outline-none focus:border-ec-teal"
           />
         </div>
@@ -115,10 +115,10 @@ export default function AdminServiceForm({ service }: { service?: Service }) {
       </div>
 
       <div>
-        <label className="text-xs font-semibold text-ec-text-muted block mb-1">Short Description</label>
+        <label className="text-xs font-semibold text-ec-text-muted block mb-1">Description</label>
         <textarea
-          value={form.short_description}
-          onChange={(e) => setForm(f => ({ ...f, short_description: e.target.value }))}
+          value={form.description_en}
+          onChange={(e) => setForm(f => ({ ...f, description_en: e.target.value }))}
           rows={2}
           className="w-full rounded-xl border border-ec-border bg-ec-bg px-3 py-2 text-sm text-ec-text focus:outline-none focus:border-ec-teal resize-none"
         />
