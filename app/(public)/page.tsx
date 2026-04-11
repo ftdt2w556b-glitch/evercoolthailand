@@ -265,13 +265,15 @@ export default function HomePage() {
       <section className="px-4 md:px-10 mt-8">
         <div className="bg-ec-navy rounded-2xl p-5 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-28 h-28 rounded-full bg-ec-teal/10 -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-          <h2 className="text-base font-bold mb-4 relative">Why Evercool Thailand?</h2>
+          <h2 className="text-base font-bold mb-1 relative">Why EverCool Thailand?</h2>
+          <p className="text-xs text-white/50 mb-4">A branch of Ever Cool HK, sister company of Tech Free. Est. 1998.</p>
           <div className="flex flex-col gap-3 relative">
             {[
-              { title: "Licensed HVAC Contractor", desc: "Fully certified technicians with 20+ years of industry experience" },
-              { title: "Bangkok to Koh Tao Coverage", desc: "Serving the full country from our Nonthaburi base" },
-              { title: "Rapid Response", desc: "Emergency repair service available with same-day appointments" },
-              { title: "Full-Spectrum IAQ", desc: "From air purifiers to custom AHU systems, we handle it all" },
+              { title: "International Certifications", desc: "ISO 9001, EN1886, AHRI 1350, VDI 6022, and BS476 fire rated — meeting the highest global HVAC standards" },
+              { title: "20+ Years in HVAC", desc: "Founded 1998 in Hong Kong and Macau, now serving all of Thailand from our Nonthaburi office" },
+              { title: "Custom AHU Manufacturing", desc: "250,000+ sqft factory producing TECH FREE air handling units for hospitals, hotels, and commercial buildings" },
+              { title: "Authorised Broan Distributor", desc: "Official Broan ventilation partner for Thailand — residential and commercial fresh air solutions" },
+              { title: "VDI 6022 Certified Technicians", desc: "Our Thailand team holds VDI 6022 hygiene certification for air conditioning systems" },
             ].map((item) => (
               <div key={item.title} className="flex gap-3">
                 <div className="w-5 h-5 rounded-full bg-ec-teal/20 flex items-center justify-center shrink-0 mt-0.5">
@@ -286,6 +288,21 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Certifications Strip */}
+      <section className="px-4 md:px-10 mt-5">
+        <div className="bg-ec-card rounded-2xl border border-ec-border p-4">
+          <p className="text-[10px] font-semibold text-ec-text-muted uppercase tracking-widest mb-3">Certifications &amp; Standards</p>
+          <div className="flex flex-wrap gap-2">
+            {["ISO 9001", "EN 1886", "AHRI 1350", "AHRI 410", "VDI 6022", "BS 476", "EN 13501"].map((cert) => (
+              <span key={cert} className="px-2.5 py-1 rounded-lg bg-ec-teal/8 border border-ec-teal/20 text-ec-teal text-[11px] font-semibold">
+                {cert}
+              </span>
+            ))}
+          </div>
+          <p className="text-[10px] text-ec-text-muted mt-3">Danfoss Strategic Partner · Green Building Association Member</p>
         </div>
       </section>
 
