@@ -15,9 +15,7 @@ export default function PublicLayout({
       <div className="mx-auto w-full max-w-[480px] md:max-w-3xl lg:max-w-5xl flex-1 pb-nav md:pb-12">
         {children}
       </div>
-      <div className="mx-auto w-full max-w-[480px] md:max-w-3xl lg:max-w-5xl">
-        <Footer />
-      </div>
+      <Footer />
       <BottomNav />
       <InstallPrompt />
       <CookieConsent />

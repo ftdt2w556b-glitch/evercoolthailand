@@ -158,6 +158,254 @@ export default function HomePage() {
 
   return (
     <main className="page-enter">
+
+      {/* ───────────────────────────────────────────────────────── */}
+      {/* NEW LANDING SECTIONS                                      */}
+      {/* ───────────────────────────────────────────────────────── */}
+
+      {/* 1. HERO — photo background with dark overlay */}
+      <section
+        className="relative text-white overflow-hidden"
+        style={{
+          backgroundImage: "url('/images/lab-control-room.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/30 pointer-events-none" />
+        {/* Teal accent line */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-ec-teal via-ec-teal-light to-transparent pointer-events-none" />
+
+        <div className="relative px-5 md:px-10 pt-14 pb-16 md:pt-20 md:pb-24">
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ec-teal/20 border border-ec-teal/30 text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-ec-teal animate-pulse" />
+            Est. 1998 · TECH FREE Authorised Distributor
+          </div>
+
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight mb-5 max-w-2xl">
+            Pioneering Green Innovation in{" "}
+            <span className="text-ec-teal">Thailand&apos;s Air Quality</span>
+          </h1>
+
+          <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-xl mb-8">
+            Commercial HVAC &amp; Air Handling Solutions since 1998. Hospitals, data centres, hotels and pharmaceutical plants across Southeast Asia.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 max-w-sm">
+            <Link
+              href="/products"
+              className="flex-1 bg-ec-teal hover:bg-ec-teal-light text-white font-bold text-sm rounded-2xl py-3.5 text-center shadow-lg shadow-ec-teal/30 transition-all active:scale-[0.98]"
+            >
+              Explore Solutions
+            </Link>
+            <Link
+              href="/contact"
+              className="flex-1 border border-white/30 hover:bg-white/10 text-white font-semibold text-sm rounded-2xl py-3.5 text-center transition-all active:scale-[0.98]"
+            >
+              Contact Sales
+            </Link>
+          </div>
+
+          {/* Floating stats */}
+          <div className="flex flex-wrap gap-4 mt-10">
+            {[
+              { val: "1998", label: "Founded" },
+              { val: "250k+", label: "sqft Factory" },
+              { val: "7+", label: "Certifications" },
+              { val: "8", label: "Global Markets" },
+            ].map((s) => (
+              <div key={s.label} className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl px-4 py-2.5">
+                <p className="text-base font-black text-white">{s.val}</p>
+                <p className="text-[10px] text-white/60">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2. TRUST BANNER */}
+      <section className="bg-ec-navy border-b border-white/8 px-5 md:px-10 py-4">
+        <div className="flex items-center gap-2 mb-3">
+          <div className="flex-1 h-px bg-white/10" />
+          <p className="text-[9px] font-bold text-white/30 uppercase tracking-widest shrink-0">Trusted By</p>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {[
+            { label: "Hospitals", icon: (
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}><path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+            )},
+            { label: "Pharmaceutical Plants", icon: (
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}><path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+            )},
+            { label: "Hotels &amp; Hospitality", icon: (
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            )},
+            { label: "Data Centres", icon: (
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}><path strokeLinecap="round" strokeLinejoin="round" d="M5 12H3m18 0h-2M12 5V3m0 18v-2M7.05 7.05 5.636 5.636m12.728 12.728L16.95 16.95M7.05 16.95l-1.414 1.414M18.364 5.636 16.95 7.05" /><circle cx="12" cy="12" r="4" strokeLinecap="round" /></svg>
+            )},
+          ].map((item) => (
+            <div key={item.label} className="flex items-center gap-2.5 bg-white/5 border border-white/8 rounded-xl px-3 py-2.5">
+              <div className="text-ec-teal shrink-0">{item.icon}</div>
+              <span className="text-xs font-semibold text-white/70" dangerouslySetInnerHTML={{ __html: item.label }} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. CORE CATEGORIES — 3-column card grid */}
+      <section className="px-5 md:px-10 py-10">
+        <div className="text-center mb-7">
+          <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-1">Product Lines</p>
+          <h2 className="text-2xl md:text-3xl font-black text-ec-text">Core Solutions</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          {/* Card 1: TECH FREE AHU */}
+          <Link href="/products#ahu" className="group bg-ec-card rounded-2xl border border-ec-border p-6 hover:border-ec-teal/40 hover:shadow-lg hover:shadow-ec-teal/5 transition-all">
+            <div className="w-11 h-11 rounded-xl bg-sky-500/10 flex items-center justify-center mb-4">
+              <svg className="w-5 h-5 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h3 className="text-base font-bold text-ec-text group-hover:text-ec-teal transition-colors mb-1">TECH FREE AHU</h3>
+            <p className="text-xs text-ec-teal font-semibold mb-3">Custom Air Handling Units</p>
+            <p className="text-sm text-ec-text-muted leading-relaxed mb-4">Integrated cooling, heating, filtration and UV sterilization. Factory pre-assembled with plug-and-play site installation.</p>
+            <ul className="space-y-1.5">
+              {["Custom integrated cooling / heating", "VDI 6022 hygiene certified", "DDC intelligent control", "EN 1886 &amp; AHRI 1350 certified"].map((f) => (
+                <li key={f} className="flex items-center gap-2 text-[11px] text-ec-text-muted">
+                  <svg className="w-3 h-3 text-ec-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  <span dangerouslySetInnerHTML={{ __html: f }} />
+                </li>
+              ))}
+            </ul>
+            <div className="mt-5 text-xs font-semibold text-ec-teal flex items-center gap-1">
+              View products <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </div>
+          </Link>
+
+          {/* Card 2: Broan IAQ Units */}
+          <Link href="/services#broan-distribution" className="group bg-ec-card rounded-2xl border border-ec-border p-6 hover:border-ec-teal/40 hover:shadow-lg hover:shadow-ec-teal/5 transition-all">
+            <div className="w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
+              <svg className="w-5 h-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            <h3 className="text-base font-bold text-ec-text group-hover:text-ec-teal transition-colors mb-1">Broan IAQ Units</h3>
+            <p className="text-xs text-emerald-600 font-semibold mb-3">Authorised Distributor · Thailand</p>
+            <p className="text-sm text-ec-text-muted leading-relaxed mb-4">Smart fresh air ventilation for residential and commercial spaces. Authorised Broan partner for all of Thailand.</p>
+            <ul className="space-y-1.5">
+              {["Smart control via mobile app", "Fresh outdoor air integration", "Heat &amp; energy recovery", "Quiet duct ventilators from 16dB"].map((f) => (
+                <li key={f} className="flex items-center gap-2 text-[11px] text-ec-text-muted">
+                  <svg className="w-3 h-3 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  <span dangerouslySetInnerHTML={{ __html: f }} />
+                </li>
+              ))}
+            </ul>
+            <div className="mt-5 text-xs font-semibold text-emerald-600 flex items-center gap-1">
+              Learn more <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </div>
+          </Link>
+
+          {/* Card 3: Air Purifiers & Ventilators */}
+          <Link href="/products#ventilation" className="group bg-ec-card rounded-2xl border border-ec-border p-6 hover:border-ec-teal/40 hover:shadow-lg hover:shadow-ec-teal/5 transition-all">
+            <div className="w-11 h-11 rounded-xl bg-violet-500/10 flex items-center justify-center mb-4">
+              <svg className="w-5 h-5 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 className="text-base font-bold text-ec-text group-hover:text-ec-teal transition-colors mb-1">Air Purifiers &amp; Ventilators</h3>
+            <p className="text-xs text-violet-600 font-semibold mb-3">Residential &amp; Commercial</p>
+            <p className="text-sm text-ec-text-muted leading-relaxed mb-4">Medical-grade air purification for Thailand&apos;s high-humidity climate. Triple filtration with real-time monitoring.</p>
+            <ul className="space-y-1.5">
+              {["H13 HEPA filters", "PM2.5 &amp; CO2 monitoring", "UV germicidal disinfection", "Activated carbon odour removal"].map((f) => (
+                <li key={f} className="flex items-center gap-2 text-[11px] text-ec-text-muted">
+                  <svg className="w-3 h-3 text-violet-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  <span dangerouslySetInnerHTML={{ __html: f }} />
+                </li>
+              ))}
+            </ul>
+            <div className="mt-5 text-xs font-semibold text-violet-600 flex items-center gap-1">
+              View range <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </div>
+          </Link>
+
+        </div>
+      </section>
+
+      {/* 4. WHY CHOOSE US — Bento Box */}
+      <section className="px-5 md:px-10 pb-10">
+        <div className="text-center mb-7">
+          <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-1">Why EverCool</p>
+          <h2 className="text-2xl md:text-3xl font-black text-ec-text">Built Different</h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-auto">
+
+          {/* Large card — top left, spans 2 rows on md */}
+          <div className="col-span-2 md:row-span-2 bg-ec-navy rounded-2xl p-6 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-ec-teal/10 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+            <div className="w-12 h-12 rounded-xl bg-ec-teal/20 flex items-center justify-center mb-4">
+              <svg className="w-6 h-6 text-ec-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-black text-white mb-2">Energy Saving EC Fans</h3>
+            <p className="text-sm text-white/60 leading-relaxed mb-4">Variable speed Electronically Commutated motors adjust output to real demand — cutting fan energy use by 20 to 30% versus fixed-speed AC motors.</p>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl font-black text-ec-teal">30%</span>
+              <span className="text-xs text-white/50">energy savings<br />vs. traditional fans</span>
+            </div>
+          </div>
+
+          {/* Card — top right col 1 */}
+          <div className="bg-ec-card rounded-2xl border border-ec-border p-4">
+            <div className="w-9 h-9 rounded-xl bg-amber-500/10 flex items-center justify-center mb-3">
+              <svg className="w-4.5 h-4.5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+            </div>
+            <h3 className="text-sm font-bold text-ec-text mb-1">Integrated Piping</h3>
+            <p className="text-xs text-ec-text-muted leading-relaxed">All pipes and valves factory pre-welded. On site: connect water and power only.</p>
+          </div>
+
+          {/* Card — top right col 2 */}
+          <div className="bg-ec-card rounded-2xl border border-ec-border p-4">
+            <div className="w-9 h-9 rounded-xl bg-sky-500/10 flex items-center justify-center mb-3">
+              <svg className="w-4.5 h-4.5 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
+              </svg>
+            </div>
+            <h3 className="text-sm font-bold text-ec-text mb-1">Smart DDC Control</h3>
+            <p className="text-xs text-ec-text-muted leading-relaxed">Micro-computer DDC with RS485 BMS integration. Fault diagnosis, scheduling, remote alerts.</p>
+          </div>
+
+          {/* Wide card — bottom right, spans 2 cols */}
+          <div className="col-span-2 bg-gradient-to-r from-ec-teal/10 to-transparent border border-ec-teal/20 rounded-2xl p-5 flex gap-4 items-start">
+            <div className="w-10 h-10 rounded-xl bg-ec-teal/15 flex items-center justify-center shrink-0">
+              <svg className="w-5 h-5 text-ec-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-ec-text mb-1">A-Z Custom Installations</h3>
+              <p className="text-xs text-ec-text-muted leading-relaxed">From system design and product development through control logic, software programming and on-site commissioning — EverCool and TECH FREE handle every stage in-house.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ─── Divider ─────────────────────────────────────────── */}
+      <div className="mx-5 md:mx-10 border-t border-ec-border mb-2 opacity-50" />
+      <p className="text-center text-[10px] text-ec-text-muted py-2 mb-2 uppercase tracking-widest">Existing Sections Below</p>
+      <div className="mx-5 md:mx-10 border-t border-ec-border mb-4 opacity-50" />
+
+      {/* ───────────────────────────────────────────────────────── */}
+      {/* EXISTING CONTENT (kept for review — remove as needed)    */}
+      {/* ───────────────────────────────────────────────────────── */}
+
       {/* Hero Section */}
       <section className="hero-bg text-white px-5 pt-10 pb-10 md:px-10 md:pt-14 md:pb-14 relative overflow-hidden">
         {/* Decorative rings */}
