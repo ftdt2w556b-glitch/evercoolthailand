@@ -10,9 +10,9 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const DESKTOP_NAV = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/products", label: "Products" },
   { href: "/about", label: "About" },
   { href: "/book", label: "Book" },
-  { href: "/learn", label: "Learn" },
   { href: "/contact", label: "Contact" },
 ];
 

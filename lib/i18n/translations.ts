@@ -12,6 +12,7 @@ const en = {
   navBook: "Book",
   navAccount: "Account",
   navLearn: "Learn",
+  navProducts: "Products",
 
   // Top bar
   callUs: "Call Us",
@@ -280,6 +281,7 @@ const th: typeof en = {
   navBook: "จอง",
   navAccount: "บัญชี",
   navLearn: "เรียนรู้",
+  navProducts: "สินค้า",
 
   // Top bar
   callUs: "โทรหาเรา",
