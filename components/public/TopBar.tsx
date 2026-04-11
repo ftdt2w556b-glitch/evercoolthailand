@@ -32,15 +32,16 @@ export default function TopBar() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <Image
-            src="/logo.png"
-            alt="EverCool Thailand"
-            width={120}
-            height={40}
-            className="h-8 w-auto"
-            style={{ filter: "brightness(0) invert(1)" }}
-            priority
-          />
+          <div className="bg-white rounded-lg px-2.5 py-1">
+            <Image
+              src="/logo.png"
+              alt="EverCool Thailand"
+              width={120}
+              height={36}
+              className="h-7 w-auto"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop nav links */}
