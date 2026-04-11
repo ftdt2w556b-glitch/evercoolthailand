@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/useLanguage";
-import TestimonialsCarousel from "@/components/public/TestimonialsCarousel";
+import ProjectReferences from "@/components/public/ProjectReferences";
 
 const SERVICES = [
   {
@@ -306,8 +306,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <TestimonialsCarousel />
+      {/* Project References */}
+      <ProjectReferences />
 
       {/* See Our Work */}
       <section className="px-4 md:px-10 mt-4">
