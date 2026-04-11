@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/useLanguage";
 import ProjectReferences from "@/components/public/ProjectReferences";
 
@@ -164,20 +165,20 @@ export default function HomePage() {
         <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full border border-white/8 pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
 
-        <div className="md:max-w-xl relative">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold mb-5 border border-white/15">
-            <span className="w-1.5 h-1.5 rounded-full bg-ec-green-light animate-pulse" />
-            Licensed HVAC Contractor · Bangkok &amp; Islands
-          </div>
-          <h1 className="text-[2rem] md:text-5xl font-black leading-[1.15] mb-3 tracking-tight">
-            {t.heroTagline}
-          </h1>
-          <p className="text-sm md:text-base text-white/70 leading-relaxed max-w-[340px]">
-            AC installation, repair, maintenance &amp; air purifiers. Serving Bangkok, Koh Tao and Surat Thani.
-          </p>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-3 mt-6 relative md:max-w-sm">
+        <div className="md:flex md:items-center md:gap-8 relative">
+          {/* Left: copy */}
+          <div className="md:flex-1 md:max-w-xl">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold mb-5 border border-white/15">
+              <span className="w-1.5 h-1.5 rounded-full bg-ec-green-light animate-pulse" />
+              Licensed HVAC Contractor · Bangkok &amp; Islands
+            </div>
+            <h1 className="text-[2rem] md:text-5xl font-black leading-[1.15] mb-3 tracking-tight">
+              {t.heroTagline}
+            </h1>
+            <p className="text-sm md:text-base text-white/70 leading-relaxed max-w-[340px]">
+              AC installation, repair, maintenance &amp; air purifiers. Serving Bangkok, Koh Tao and Surat Thani.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 mt-6 md:max-w-sm">
           <Link
             href="/quote"
             className="flex-1 bg-ec-teal hover:bg-ec-teal-light text-white font-bold text-[15px] rounded-2xl py-4 text-center shadow-lg shadow-ec-teal/30 transition-all active:scale-[0.98]"
@@ -190,6 +191,29 @@ export default function HomePage() {
           >
             {t.heroBookBtn}
           </Link>
+            </div>
+          </div>
+
+          {/* Right: product image (desktop only) */}
+          <div className="hidden md:flex md:flex-1 md:justify-center md:items-end md:self-end">
+            <div className="relative w-full max-w-xs">
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-ec-teal/20 blur-3xl rounded-full scale-75 pointer-events-none" />
+              <Image
+                src="/images/products/modular-ahu-2.png"
+                alt="TECH FREE Modular Air Handling Unit"
+                width={380}
+                height={280}
+                className="relative object-contain drop-shadow-2xl"
+                priority
+              />
+              {/* Floating cert badge */}
+              <div className="absolute -top-2 -right-4 bg-white/15 backdrop-blur-sm border border-white/20 rounded-xl px-2.5 py-1.5">
+                <p className="text-[9px] font-bold text-white/90 uppercase tracking-widest">ISO 9001</p>
+                <p className="text-[9px] text-white/60">Certified Factory</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
