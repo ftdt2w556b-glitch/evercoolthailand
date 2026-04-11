@@ -331,12 +331,12 @@ function ProductCard({
   return (
     <div className="bg-ec-card rounded-2xl border border-ec-border overflow-hidden flex flex-col">
       {/* Product image */}
-      <div className="relative h-44 bg-ec-bg overflow-hidden">
+      <div className="relative h-44 bg-slate-950 dark:bg-slate-950 overflow-hidden">
         <Image
           src={product.image}
           alt={product.name}
           fill
-          className="object-contain p-3"
+          className="object-contain p-4"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         {/* Category badge */}

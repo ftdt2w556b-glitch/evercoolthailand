@@ -306,6 +306,80 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TECH FREE Products Teaser */}
+      <section className="px-4 md:px-10 mt-5">
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <h2 className="text-[17px] font-bold text-ec-text">TECH FREE Products</h2>
+            <p className="text-xs text-ec-text-muted mt-0.5">Industrial AHU systems &amp; components</p>
+          </div>
+          <Link href="/products" className="text-xs font-semibold text-ec-teal hover:underline shrink-0">
+            View All &rarr;
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {[
+            {
+              label: "Air Handling Units",
+              sub: "Modular, Integrated, Hygienic",
+              href: "/products#ahu",
+              icon: (
+                <svg className="w-5 h-5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              ),
+              bg: "bg-sky-500/10",
+            },
+            {
+              label: "Heat Recovery",
+              sub: "Heat Pipe, Dual System",
+              href: "/products#heat",
+              icon: (
+                <svg className="w-5 h-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              ),
+              bg: "bg-violet-500/10",
+            },
+            {
+              label: "Outdoor Units",
+              sub: "Packaged, Dry Cooler",
+              href: "/products#outdoor",
+              icon: (
+                <svg className="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              ),
+              bg: "bg-emerald-500/10",
+            },
+            {
+              label: "Components",
+              sub: "Coils, EC Fan Coil",
+              href: "/products#components",
+              icon: (
+                <svg className="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              ),
+              bg: "bg-amber-500/10",
+            },
+          ].map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="bg-ec-card rounded-2xl p-3.5 border border-ec-border hover:border-ec-teal/30 transition-all active:scale-[0.98] group"
+            >
+              <div className={`w-9 h-9 rounded-xl flex items-center justify-center mb-2.5 ${item.bg}`}>
+                {item.icon}
+              </div>
+              <p className="text-xs font-bold text-ec-text group-hover:text-ec-teal transition-colors leading-tight">{item.label}</p>
+              <p className="text-[10px] text-ec-text-muted mt-0.5 leading-snug">{item.sub}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Project References */}
       <ProjectReferences />
 
