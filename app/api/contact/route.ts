@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     try {
       const { sendEmail } = await import("@/lib/email/send");
       await sendEmail({
-        to: "info@evercoolthailand.com",
+        to: "hello@evercoolthailand.com",
         subject: `New Contact Message from ${name}`,
         html: `
           <h2>New Contact Message</h2>
