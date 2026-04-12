@@ -22,6 +22,7 @@ const CATEGORIES = [
   "Air Handling Units",
   "Fresh Air Systems",
   "Condensing Units",
+  "Components",
   "Purifiers",
 ] as const;
 
@@ -59,11 +60,25 @@ const PRODUCTS: Product[] = [
     badge: "TECH FREE",
   },
   {
+    id: "mini-ahu",
+    name: "Mini Air Handling Unit",
+    category: "Air Handling Units",
+    applications: ["Commercial", "Medical"],
+    image: "/images/products/ahu-vertical.png",
+    specs: [
+      "Anodized aluminum casing, 30mm PU insulation panels",
+      "Variable speed EC fan saves 20-30% energy",
+      "Max 2,500 CFM / 450 Pa, fits compact ceiling installations",
+    ],
+    certifications: ["EN 1886"],
+    badge: "TECH FREE",
+  },
+  {
     id: "vrf-ahu",
     name: "Variable Refrigerant Flow AHU",
     category: "Air Handling Units",
     applications: ["Commercial", "Medical"],
-    image: "/images/products/ahu-vertical.jpg",
+    image: "/images/products/ahu-vertical.png",
     specs: [
       "Direct expansion VRF coil for inverter-driven systems",
       "EC fan motor, part-load efficiency optimised",
@@ -77,27 +92,13 @@ const PRODUCTS: Product[] = [
     name: "Integrated Multi-Functional AHU",
     category: "Air Handling Units",
     applications: ["Commercial", "Industrial"],
-    image: "/images/products/integrated-ahu.jpg",
+    image: "/images/products/integrated-ahu.png",
     specs: [
       "MiMEP: all piping and wiring factory pre-installed",
       "Built-in DDC controller with fault self-diagnostics",
       "Site commissioning: connect water and power only",
     ],
     certifications: ["EN 1886", "AHRI 1350"],
-    badge: "TECH FREE",
-  },
-  {
-    id: "ec-fan-coil",
-    name: "EC Fan Coil Unit",
-    category: "Air Handling Units",
-    applications: ["Commercial"],
-    image: "/images/products/ec-fan-coil.png",
-    specs: [
-      "EC motor variable speed matched to thermal demand",
-      "Low noise from 26 dB(A), ceiling or floor mounting",
-      "High part-load efficiency, BMS compatible",
-    ],
-    certifications: [],
     badge: "TECH FREE",
   },
 
@@ -145,6 +146,20 @@ const PRODUCTS: Product[] = [
     badge: "TECH FREE",
   },
   {
+    id: "dual-system-heat-recovery",
+    name: "Dual System Heat Recovery Unit",
+    category: "Fresh Air Systems",
+    applications: ["Commercial", "Medical", "Industrial"],
+    image: "/images/products/dual-system-heat-recovery.jpg",
+    specs: [
+      "Sub-cooling ensures precise moisture removal",
+      "Sensible reheat controls relative humidity precisely",
+      "DDC software control with energy regulating valve",
+    ],
+    certifications: ["EN 1886", "AHRI 1350"],
+    badge: "TECH FREE",
+  },
+  {
     id: "heat-recovery-unit",
     name: "Plate Heat Recovery Unit",
     category: "Fresh Air Systems",
@@ -189,6 +204,36 @@ const PRODUCTS: Product[] = [
     badge: "TECH FREE",
   },
 
+  /* --- Components --- */
+  {
+    id: "coils",
+    name: "Heat Exchange Coils",
+    category: "Components",
+    applications: ["Commercial", "Medical", "Industrial"],
+    image: "/images/products/coils.png",
+    specs: [
+      "Selected per AHRI 410, seamless copper tube with waved fins",
+      "High thermal conductivity, low pressure drop, less scaling",
+      "Copper, tinned copper, or hydrophilic aluminum fin options",
+    ],
+    certifications: ["AHRI 410"],
+    badge: "TECH FREE",
+  },
+  {
+    id: "ec-fan-coil",
+    name: "EC Fan Coil Unit",
+    category: "Components",
+    applications: ["Commercial"],
+    image: "/images/products/ec-fan-coil.png",
+    specs: [
+      "EC motor variable speed matched to thermal demand",
+      "Low noise from 26 dB(A), ceiling or floor mounting",
+      "High part-load efficiency, BMS compatible",
+    ],
+    certifications: [],
+    badge: "TECH FREE",
+  },
+
   /* --- Purifiers --- */
   {
     id: "air-purifier-kj310g",
@@ -226,6 +271,14 @@ function CategoryIcon({ category }: { category: string }) {
     return (
       <svg className="w-14 h-14 text-ec-teal/25" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+      </svg>
+    );
+  }
+  if (category === "Components") {
+    return (
+      <svg className="w-14 h-14 text-ec-teal/25" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.43.992a6.759 6.759 0 010 .255c-.008.378.137.75.43.99l1.005.828c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     );
   }
@@ -374,6 +427,7 @@ export default function ProductDashboard() {
     "Air Handling Units": t.prodAHU,
     "Fresh Air Systems":  t.prodFreshAir,
     "Condensing Units":   t.prodCondensing,
+    "Components":         t.tfComponentsLabel,
     "Purifiers":          t.prodPurifiers,
   };
   const APPLICATION_LABELS: Record<string, string> = {
