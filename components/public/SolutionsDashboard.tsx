@@ -448,7 +448,7 @@ export default function SolutionsDashboard() {
   return (
     <div>
       {/* ── SECTION 1: Hero header ─────────────────────────── */}
-      <div className="bg-gradient-to-r from-ec-navy via-slate-900 to-ec-navy px-4 md:px-10 pt-10 pb-8 border-b border-white/8">
+      <div className="bg-gradient-to-r from-ec-navy via-slate-900 to-ec-navy px-4 md:px-10 pt-7 pb-6 md:pt-10 md:pb-8 border-b border-white/8">
         <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-3">
           TECH FREE Authorised Distributor · Thailand
         </p>
@@ -476,18 +476,18 @@ export default function SolutionsDashboard() {
       </div>
 
       {/* ── SECTION 2: Product Hero ────────────────────────── */}
-      <div className="px-4 md:px-10 py-12 bg-ec-bg border-b border-ec-border">
-        <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-3">
+      <div className="px-4 md:px-10 py-8 md:py-12 bg-ec-bg border-b border-ec-border">
+        <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-2">
           Featured Solution
         </p>
-        <h2 className="text-xl md:text-2xl font-black text-ec-text mb-8">
+        <h2 className="text-xl md:text-2xl font-black text-ec-text mb-5 md:mb-8">
           The TECH FREE Integrated Multi-Functional Air Handling Unit
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
           {/* Left: single product image */}
-          <div className="md:flex-1">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-white">
+          <div className="md:flex-1 w-full max-w-sm md:max-w-none">
+            <div className="relative aspect-[3/2] md:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-white">
               <Image
                 src="/images/products/integrated-ahu.jpg"
                 alt="TECH FREE Integrated AHU"
@@ -547,7 +547,7 @@ export default function SolutionsDashboard() {
       </div>
 
       {/* ── SECTION 3: 8 Components Grid ──────────────────── */}
-      <div className="-mx-4 md:-mx-10 bg-ec-card border-y border-ec-border px-4 md:px-10 py-12">
+      <div className="-mx-4 md:-mx-10 bg-ec-card border-y border-ec-border px-4 md:px-10 py-8 md:py-12">
         <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-3">
           Unit Components
         </p>
@@ -558,8 +558,8 @@ export default function SolutionsDashboard() {
           Every TECH FREE AHU is built from precision-engineered subsystems, each independently certified to international standards.
         </p>
 
-        {/* Main components diagram — full 1239×811, nothing clipped */}
-        <div className="w-full mt-8 rounded-2xl overflow-hidden bg-slate-50 shadow-lg">
+        {/* Main components diagram */}
+        <div className="mt-6 rounded-2xl overflow-hidden bg-slate-50 shadow-lg max-w-2xl">
           <Image
             src="/images/solutions/ahu-components-diagram.jpg"
             alt="TECH FREE AHU - labeled component diagram"
@@ -734,7 +734,7 @@ export default function SolutionsDashboard() {
 
       {/* ── SECTION 4: HVAC Solutions callout ─────────────── */}
       <div className="px-4 md:px-10 py-10">
-        <div className="bg-gradient-to-r from-ec-navy via-slate-900 to-ec-navy rounded-2xl p-8 text-white text-center max-w-3xl mx-auto">
+        <div className="bg-gradient-to-r from-ec-navy via-slate-900 to-ec-navy rounded-2xl p-5 md:p-8 text-white text-center max-w-3xl mx-auto">
           <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-2">
             One Stop Service
           </p>
