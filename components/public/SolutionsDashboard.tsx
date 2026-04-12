@@ -558,14 +558,14 @@ export default function SolutionsDashboard() {
           Every TECH FREE AHU is built from precision-engineered subsystems, each independently certified to international standards.
         </p>
 
-        {/* Main components diagram — natural dimensions, nothing clipped */}
+        {/* Main components diagram — full 1239×811, nothing clipped */}
         <div className="w-full mt-8 rounded-2xl overflow-hidden bg-slate-50 shadow-lg">
           <Image
             src="/images/solutions/ahu-components-diagram.jpg"
             alt="TECH FREE AHU - labeled component diagram"
-            width={1024}
-            height={670}
-            className="w-full h-auto"
+            width={1239}
+            height={811}
+            className="w-full h-auto block"
           />
         </div>
 
