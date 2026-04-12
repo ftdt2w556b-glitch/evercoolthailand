@@ -307,7 +307,7 @@ const en = {
 
   // About Dashboard
   aboutEyebrow: "About EverCool Thailand",
-  aboutHeadline: "Mastering Thailand's Air Quality Since 1998.",
+  aboutHeadline: "Mastering Air Quality Since 1998.",
   aboutPeopleTitle: "People & Expertise",
   aboutPeopleDesc: "The people behind the precision.",
   aboutIndustryTitle: "Industry Presence",
@@ -708,7 +708,7 @@ const th: typeof en = {
 
   // About Dashboard
   aboutEyebrow: "เกี่ยวกับ EverCool Thailand",
-  aboutHeadline: "เชี่ยวชาญคุณภาพอากาศไทยตั้งแต่ปี 1998",
+  aboutHeadline: "เชี่ยวชาญคุณภาพอากาศตั้งแต่ปี 1998",
   aboutPeopleTitle: "บุคลากรและความเชี่ยวชาญ",
   aboutPeopleDesc: "ผู้อยู่เบื้องหลังความแม่นยำ",
   aboutIndustryTitle: "การมีส่วนร่วมในอุตสาหกรรม",
