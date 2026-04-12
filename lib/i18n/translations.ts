@@ -273,6 +273,66 @@ const en = {
   contactHoursVal: "Mon to Sat: 8:00 to 18:00",
   contactAreas: "Service Areas",
   contactAreasVal: "Bangkok • Koh Tao • Surat Thani",
+
+  // Additional navigation & TopBar
+  navContact: "Contact",
+  getQuote: "Get Quote",
+  nextEvent: "Next Event",
+
+  // Homepage CTAs
+  heroExplore: "Explore Solutions",
+  heroContactSales: "Contact Sales",
+
+  // Solutions Dashboard
+  solEyebrow: "TECH FREE Authorised Distributor · Thailand",
+  solHeadline: "Ever Cool Air Conditioning Thailand offers a variety of solutions to fit your custom needs.",
+  solSubtitle: "Custom air handling units, IAQ systems, and integrated HVAC solutions for hospitals, pharmaceutical facilities, data centres, hotels, and commercial buildings across Thailand.",
+  solStatCerts: "Certifications",
+  solStatWarranty: "EC Motor Warranty",
+  solStatPressure: "Max Static Pressure",
+  solStatLeakage: "EN 1886 Leakage Class",
+  solFeatured: "Featured Solution",
+  solTabFrame: "Frame & Insulation",
+  solTabFans: "Fans & Motors",
+  solTabControl: "Smart Control",
+  solHvacLabel: "One Stop Service",
+  solHvacTitle: "We Provide HVAC Solutions",
+  solHvacBody: "Custom installations from design through commissioning. Stable, reliable systems backed by over 25 years of HVAC engineering expertise.",
+  solCtaTitle: "Ready to specify a unit?",
+  solCtaBody: "Our engineers will size, select and submit a full submittal package.",
+  solRequestQuote: "Request a Quote",
+  solTalkEngineer: "Talk to an Engineer",
+  solFaqTitle: "Technical Questions",
+  solGetQuote: "Get a Solution Quote",
+
+  // About Dashboard
+  aboutEyebrow: "About EverCool Thailand",
+  aboutHeadline: "Mastering Thailand's Air Quality Since 1998.",
+  aboutPeopleTitle: "People & Expertise",
+  aboutPeopleDesc: "The people behind the precision.",
+  aboutIndustryTitle: "Industry Presence",
+  aboutIndustryDesc: "Active in every room where HVAC matters.",
+  aboutDnaTitle: "Our DNA",
+  aboutDnaDesc: "What sets us apart.",
+  aboutCredTitle: "Credentials",
+  aboutCredDesc: "Recognised by the organisations that set the standard.",
+  aboutCtaLabel: "Let's work together",
+  aboutCtaTitle: "Partner with the experts who know your facility's air better than anyone.",
+  aboutDiscuss: "Discuss Your Project",
+  exploreSolutions: "Explore Solutions",
+  viewProducts: "View Products",
+
+  // Products Dashboard
+  prodCategories: "Categories",
+  prodApplications: "Applications",
+  prodAHU: "Air Handling Units",
+  prodFreshAir: "Fresh Air Systems",
+  prodCondensing: "Condensing Units",
+  prodPurifiers: "Purifiers",
+  prodCommercial: "Commercial",
+  prodMedical: "Medical",
+  prodIndustrial: "Industrial",
+  prodViewSpecs: "View Tech Specs",
 };
 
 const th: typeof en = {
@@ -543,6 +603,66 @@ const th: typeof en = {
   contactHoursVal: "จันทร์ ถึง เสาร์: 8:00 ถึง 18:00",
   contactAreas: "พื้นที่บริการ",
   contactAreasVal: "กรุงเทพ • เกาะเต่า • สุราษฎร์ธานี",
+
+  // Additional navigation & TopBar
+  navContact: "ติดต่อ",
+  getQuote: "ขอใบเสนอราคา",
+  nextEvent: "กิจกรรมถัดไป",
+
+  // Homepage CTAs
+  heroExplore: "สำรวจโซลูชัน",
+  heroContactSales: "ติดต่อฝ่ายขาย",
+
+  // Solutions Dashboard
+  solEyebrow: "ตัวแทนจำหน่ายอย่างเป็นทางการ TECH FREE · ประเทศไทย",
+  solHeadline: "Ever Cool Air Conditioning Thailand นำเสนอโซลูชันหลากหลายเพื่อตอบสนองความต้องการเฉพาะของคุณ",
+  solSubtitle: "เครื่องส่งลมเย็นสั่งทำ ระบบ IAQ และโซลูชัน HVAC แบบครบวงจรสำหรับโรงพยาบาล โรงงานยา ศูนย์ข้อมูล โรงแรม และอาคารพาณิชย์ทั่วไทย",
+  solStatCerts: "การรับรอง",
+  solStatWarranty: "รับประกันมอเตอร์ EC",
+  solStatPressure: "แรงดันสถิตสูงสุด",
+  solStatLeakage: "ระดับการรั่วซึม EN 1886",
+  solFeatured: "โซลูชันแนะนำ",
+  solTabFrame: "โครงสร้างและฉนวน",
+  solTabFans: "พัดลมและมอเตอร์",
+  solTabControl: "ระบบควบคุมอัจฉริยะ",
+  solHvacLabel: "บริการครบวงจร",
+  solHvacTitle: "เราให้บริการโซลูชัน HVAC",
+  solHvacBody: "การติดตั้งแบบกำหนดเองตั้งแต่การออกแบบจนถึงการเปิดใช้งาน ระบบที่มั่นคงและเชื่อถือได้ด้วยความเชี่ยวชาญ HVAC กว่า 25 ปี",
+  solCtaTitle: "พร้อมระบุหน่วยของคุณแล้วหรือยัง?",
+  solCtaBody: "วิศวกรของเราจะคำนวณขนาด เลือกรุ่น และจัดเตรียมเอกสารครบชุด",
+  solRequestQuote: "ขอใบเสนอราคา",
+  solTalkEngineer: "คุยกับวิศวกร",
+  solFaqTitle: "คำถามทางเทคนิค",
+  solGetQuote: "ขอใบเสนอราคาโซลูชัน",
+
+  // About Dashboard
+  aboutEyebrow: "เกี่ยวกับ EverCool Thailand",
+  aboutHeadline: "เชี่ยวชาญคุณภาพอากาศไทยตั้งแต่ปี 1998",
+  aboutPeopleTitle: "บุคลากรและความเชี่ยวชาญ",
+  aboutPeopleDesc: "ผู้อยู่เบื้องหลังความแม่นยำ",
+  aboutIndustryTitle: "การมีส่วนร่วมในอุตสาหกรรม",
+  aboutIndustryDesc: "ปรากฏตัวในทุกพื้นที่ที่ HVAC มีความสำคัญ",
+  aboutDnaTitle: "DNA ของเรา",
+  aboutDnaDesc: "สิ่งที่ทำให้เราแตกต่าง",
+  aboutCredTitle: "วุฒิบัตรและการรับรอง",
+  aboutCredDesc: "ได้รับการยอมรับจากองค์กรที่กำหนดมาตรฐาน",
+  aboutCtaLabel: "มาทำงานร่วมกัน",
+  aboutCtaTitle: "เป็นพาร์ทเนอร์กับผู้เชี่ยวชาญที่รู้จักอากาศในสถานที่ของคุณดีที่สุด",
+  aboutDiscuss: "พูดคุยเรื่องโครงการ",
+  exploreSolutions: "สำรวจโซลูชัน",
+  viewProducts: "ดูผลิตภัณฑ์",
+
+  // Products Dashboard
+  prodCategories: "หมวดหมู่",
+  prodApplications: "การใช้งาน",
+  prodAHU: "เครื่องส่งลมเย็น",
+  prodFreshAir: "ระบบอากาศสด",
+  prodCondensing: "ชุดคอนเดนซิ่ง",
+  prodPurifiers: "เครื่องฟอกอากาศ",
+  prodCommercial: "เชิงพาณิชย์",
+  prodMedical: "การแพทย์",
+  prodIndustrial: "อุตสาหกรรม",
+  prodViewSpecs: "ดูสเปคทางเทคนิค",
 };
 
 export const translations: Record<Lang, typeof en> = { en, th };

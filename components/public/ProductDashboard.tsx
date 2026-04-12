@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/lib/i18n/useLanguage";
 
 /* ─── Types ─────────────────────────────────────────────── */
 interface Product {
@@ -245,7 +246,8 @@ const BADGE_STYLES: Record<string, string> = {
 };
 
 /* ─── Product Card ───────────────────────────────────────── */
-function ProductCard({ product }: { product: Product }) {
+function ProductCard({ product, categoryLabel }: { product: Product; categoryLabel: string }) {
+  const { t } = useLanguage();
   return (
     <div className="group bg-ec-card border border-ec-border rounded-2xl overflow-hidden flex flex-col hover:border-ec-teal/40 hover:shadow-xl hover:shadow-ec-teal/5 transition-all duration-200">
       {/* Image / Icon */}
@@ -274,7 +276,7 @@ function ProductCard({ product }: { product: Product }) {
       {/* Content */}
       <div className="p-4 flex flex-col flex-1">
         <p className="text-[10px] font-semibold text-ec-teal uppercase tracking-widest mb-1">
-          {product.category}
+          {categoryLabel}
         </p>
         <h3 className="text-sm font-bold text-ec-text leading-snug mb-3">
           {product.name}
@@ -309,7 +311,7 @@ function ProductCard({ product }: { product: Product }) {
           href={`/quote?product=${product.id}`}
           className="text-xs font-semibold text-ec-teal hover:text-ec-teal-light flex items-center gap-1 transition-colors"
         >
-          View Tech Specs
+          {t.prodViewSpecs}
           <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
@@ -364,8 +366,21 @@ function FilterItem({
 
 /* ─── Main Dashboard Component ───────────────────────────── */
 export default function ProductDashboard() {
+  const { t } = useLanguage();
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedApplications, setSelectedApplications] = useState<string[]>([]);
+
+  const CATEGORY_LABELS: Record<string, string> = {
+    "Air Handling Units": t.prodAHU,
+    "Fresh Air Systems":  t.prodFreshAir,
+    "Condensing Units":   t.prodCondensing,
+    "Purifiers":          t.prodPurifiers,
+  };
+  const APPLICATION_LABELS: Record<string, string> = {
+    "Commercial": t.prodCommercial,
+    "Medical":    t.prodMedical,
+    "Industrial": t.prodIndustrial,
+  };
 
   const toggle = <T extends string>(
     list: T[],
@@ -425,13 +440,13 @@ export default function ProductDashboard() {
           {/* Categories */}
           <div>
             <h3 className="text-[10px] font-bold text-ec-text uppercase tracking-widest mb-3">
-              Categories
+              {t.prodCategories}
             </h3>
             <div className="space-y-0.5">
               {CATEGORIES.map((cat) => (
                 <FilterItem
                   key={cat}
-                  label={cat}
+                  label={CATEGORY_LABELS[cat] ?? cat}
                   checked={selectedCategories.includes(cat)}
                   onChange={() =>
                     toggle(selectedCategories, setSelectedCategories as (v: string[]) => void, cat)
@@ -448,13 +463,13 @@ export default function ProductDashboard() {
           {/* Applications */}
           <div>
             <h3 className="text-[10px] font-bold text-ec-text uppercase tracking-widest mb-3">
-              Applications
+              {t.prodApplications}
             </h3>
             <div className="space-y-0.5">
               {APPLICATIONS.map((app) => (
                 <FilterItem
                   key={app}
-                  label={app}
+                  label={APPLICATION_LABELS[app] ?? app}
                   checked={selectedApplications.includes(app)}
                   onChange={() =>
                     toggle(
@@ -549,7 +564,7 @@ export default function ProductDashboard() {
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} categoryLabel={CATEGORY_LABELS[product.category] ?? product.category} />
             ))}
           </div>
         ) : (

@@ -203,13 +203,13 @@ export default function HomePage() {
               href="/products"
               className="flex-1 bg-ec-teal hover:bg-ec-teal-light text-white font-bold text-sm rounded-2xl py-3.5 text-center shadow-lg shadow-ec-teal/30 transition-all active:scale-[0.98]"
             >
-              Explore Solutions
+              {t.heroExplore}
             </Link>
             <Link
               href="/contact"
               className="flex-1 border border-white/30 hover:bg-white/10 text-white font-semibold text-sm rounded-2xl py-3.5 text-center transition-all active:scale-[0.98]"
             >
-              Contact Sales
+              {t.heroContactSales}
             </Link>
           </div>
 

@@ -7,16 +7,16 @@ import { useLanguage } from "@/lib/i18n/useLanguage";
 import { useTheme } from "@/lib/theme";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-const DESKTOP_NAV = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Solutions" },
-  { href: "/products", label: "Products" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
-
 export default function TopBar() {
   const { lang, t, setLang } = useLanguage();
+
+  const DESKTOP_NAV = [
+    { href: "/", label: t.navHome },
+    { href: "/services", label: t.navServices },
+    { href: "/products", label: t.navProducts },
+    { href: "/about", label: t.navAbout },
+    { href: "/contact", label: t.navContact },
+  ];
   const { toggleTheme } = useTheme();
   const pathname = usePathname();
 
@@ -65,7 +65,7 @@ export default function TopBar() {
           className="md:hidden flex items-center gap-1.5 text-[11px] font-bold text-ec-teal border border-ec-teal/40 bg-ec-teal/10 hover:bg-ec-teal/20 px-3 py-1.5 rounded-full transition-colors"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-ec-teal animate-pulse shrink-0" />
-          Next Event
+          {t.nextEvent}
         </Link>
 
         {/* Right side actions */}
@@ -86,7 +86,7 @@ export default function TopBar() {
             href="/quote"
             className="hidden md:block bg-ec-teal hover:bg-ec-teal-light text-white text-sm font-semibold px-4 py-1.5 rounded-xl transition-colors mr-2"
           >
-            Get Quote
+            {t.getQuote}
           </Link>
 
           {/* Phone icon - mobile only */}

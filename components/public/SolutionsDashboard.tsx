@@ -3,12 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/useLanguage";
 
 /* ─── Tab data ───────────────────────────────────────────── */
 const TABS = [
-  { id: "frame", label: "Frame & Insulation" },
-  { id: "fans",  label: "Fans & Motors" },
-  { id: "control", label: "Smart Control" },
+  { id: "frame" },
+  { id: "fans" },
+  { id: "control" },
 ] as const;
 
 type TabId = (typeof TABS)[number]["id"];
@@ -442,31 +443,40 @@ function AccordionItem({
 
 /* ─── Main Component ─────────────────────────────────────── */
 export default function SolutionsDashboard() {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<TabId>("frame");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const TAB_LABELS: Record<TabId, string> = {
+    frame: t.solTabFrame,
+    fans: t.solTabFans,
+    control: t.solTabControl,
+  };
+
+  const STATS = [
+    { value: "7+",        label: t.solStatCerts },
+    { value: "5 yr",      label: t.solStatWarranty },
+    { value: "±2,500 Pa", label: t.solStatPressure },
+    { value: "L2/L3",     label: t.solStatLeakage },
+  ];
 
   return (
     <div>
       {/* ── SECTION 1: Hero header ─────────────────────────── */}
       <div className="bg-gradient-to-r from-ec-navy via-slate-900 to-ec-navy px-4 md:px-10 pt-7 pb-6 md:pt-10 md:pb-8 border-b border-white/8">
         <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-3">
-          TECH FREE Authorised Distributor · Thailand
+          {t.solEyebrow}
         </p>
         <h1 className="text-2xl md:text-4xl font-black text-white leading-tight mb-3">
-          Ever Cool Air Conditioning Thailand offers a variety of solutions to fit your custom needs.
+          {t.solHeadline}
         </h1>
         <p className="text-sm text-white/55 max-w-xl leading-relaxed mb-7">
-          Custom air handling units, IAQ systems, and integrated HVAC solutions for hospitals, pharmaceutical facilities, data centres, hotels, and commercial buildings across Thailand.
+          {t.solSubtitle}
         </p>
 
         {/* Key stats */}
         <div className="flex flex-wrap gap-4">
-          {[
-            { value: "7+", label: "Certifications" },
-            { value: "5 yr", label: "EC Motor Warranty" },
-            { value: "±2,500 Pa", label: "Max Static Pressure" },
-            { value: "L2/L3", label: "EN 1886 Leakage Class" },
-          ].map((stat) => (
+          {STATS.map((stat) => (
             <div key={stat.label} className="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-center min-w-[90px]">
               <div className="text-base font-black text-white">{stat.value}</div>
               <div className="text-[10px] text-white/50 mt-0.5">{stat.label}</div>
@@ -737,13 +747,13 @@ export default function SolutionsDashboard() {
       <div className="px-4 md:px-10 py-10">
         <div className="bg-gradient-to-r from-ec-navy via-slate-900 to-ec-navy rounded-2xl p-5 md:p-8 text-white text-center max-w-3xl mx-auto">
           <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-2">
-            One Stop Service
+            {t.solHvacLabel}
           </p>
           <h2 className="text-2xl font-black text-white">
-            We Provide HVAC Solutions
+            {t.solHvacTitle}
           </h2>
           <p className="text-sm text-white/60 mt-2 mb-6 max-w-xl mx-auto">
-            Custom installations from design through commissioning. Stable, reliable systems backed by over 25 years of HVAC engineering expertise.
+            {t.solHvacBody}
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
             <span className="text-xs font-semibold text-ec-teal bg-ec-teal/10 border border-ec-teal/20 px-3 py-1.5 rounded-full">
@@ -757,7 +767,7 @@ export default function SolutionsDashboard() {
             href="/quote"
             className="bg-ec-teal text-white font-bold rounded-xl px-6 py-3 mt-6 inline-block hover:bg-ec-teal-light transition-colors"
           >
-            Get a Solution Quote
+            {t.solGetQuote}
           </Link>
         </div>
       </div>
@@ -775,7 +785,7 @@ export default function SolutionsDashboard() {
                   : "border-transparent text-ec-text-muted hover:text-ec-text"
               }`}
             >
-              {tab.label}
+              {TAB_LABELS[tab.id]}
             </button>
           ))}
         </div>
@@ -791,21 +801,21 @@ export default function SolutionsDashboard() {
       {/* CTA strip */}
       <div className="mx-4 md:mx-10 mb-8 bg-ec-card border border-ec-border rounded-2xl px-6 py-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <p className="text-sm font-bold text-ec-text mb-0.5">Ready to specify a unit?</p>
-          <p className="text-xs text-ec-text-muted">Our engineers will size, select and submit a full submittal package.</p>
+          <p className="text-sm font-bold text-ec-text mb-0.5">{t.solCtaTitle}</p>
+          <p className="text-xs text-ec-text-muted">{t.solCtaBody}</p>
         </div>
         <div className="flex gap-3 shrink-0">
           <Link
             href="/quote?service=custom-ahu"
             className="text-xs font-semibold bg-ec-teal hover:bg-ec-teal-light text-white px-4 py-2.5 rounded-xl transition-colors"
           >
-            Request a Quote
+            {t.solRequestQuote}
           </Link>
           <Link
             href="/contact"
             className="text-xs font-semibold bg-ec-card hover:bg-ec-border border border-ec-border text-ec-text px-4 py-2.5 rounded-xl transition-colors"
           >
-            Talk to an Engineer
+            {t.solTalkEngineer}
           </Link>
         </div>
       </div>
@@ -813,7 +823,7 @@ export default function SolutionsDashboard() {
       {/* FAQ Accordion */}
       <div className="px-4 md:px-10 pb-10">
         <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-1">FAQ</p>
-        <h2 className="text-xl font-black text-ec-text mb-6">Technical Questions</h2>
+        <h2 className="text-xl font-black text-ec-text mb-6">{t.solFaqTitle}</h2>
         <div className="max-w-3xl">
           {FAQS.map((faq, i) => (
             <AccordionItem

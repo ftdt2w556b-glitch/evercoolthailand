@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import GrayscaleOnScroll from "./GrayscaleOnScroll";
+import { useLanguage } from "@/lib/i18n/useLanguage";
 
 /* ─── Zigzag team rows ───────────────────────────────────── */
 const TEAM_ROWS = [
@@ -145,6 +148,7 @@ const DNA = [
 
 /* ─── Component ──────────────────────────────────────────── */
 export default function AboutDashboard() {
+  const { t } = useLanguage();
   return (
     <div>
 
@@ -157,12 +161,10 @@ export default function AboutDashboard() {
           {/* Left: Text */}
           <div className="flex-1 bg-gradient-to-br from-ec-navy via-slate-900 to-[#0a1628] px-8 md:px-14 py-14 flex flex-col justify-center">
             <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-4">
-              About EverCool Thailand
+              {t.aboutEyebrow}
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-[2.6rem] font-black text-white leading-[1.1] mb-5">
-              Mastering Thailand's<br />
-              Air Quality<br />
-              <span className="text-ec-teal">Since 1998.</span>
+              {t.aboutHeadline}
             </h1>
             <p className="text-sm text-white/60 leading-relaxed max-w-md mb-5">
               What began as HVAC trading has evolved into pioneering TECH FREE air handling
@@ -179,13 +181,13 @@ export default function AboutDashboard() {
                 href="/contact"
                 className="text-sm font-semibold bg-ec-teal hover:bg-ec-teal-light text-white px-5 py-2.5 rounded-xl transition-colors"
               >
-                Discuss Your Project
+                {t.aboutDiscuss}
               </Link>
               <Link
                 href="/products"
                 className="text-sm font-semibold bg-white/8 hover:bg-white/12 text-white border border-white/15 px-5 py-2.5 rounded-xl transition-colors"
               >
-                View Products
+                {t.viewProducts}
               </Link>
             </div>
           </div>
@@ -219,10 +221,10 @@ export default function AboutDashboard() {
       <div className="px-4 md:px-10 py-14 space-y-16">
         <div className="text-center mb-2 pb-8">
           <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-2">
-            People & Expertise
+            {t.aboutPeopleTitle}
           </p>
           <h2 className="text-2xl md:text-3xl font-black text-ec-text">
-            The people behind the precision.
+            {t.aboutPeopleDesc}
           </h2>
         </div>
 
@@ -291,10 +293,10 @@ export default function AboutDashboard() {
       <div className="px-4 md:px-10 py-14 space-y-16">
         <div className="text-center mb-2">
           <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-2">
-            Industry Presence
+            {t.aboutIndustryTitle}
           </p>
           <h2 className="text-2xl md:text-3xl font-black text-ec-text">
-            Active in every room where HVAC matters.
+            {t.aboutIndustryDesc}
           </h2>
           <p className="text-sm text-ec-text-muted mt-3 max-w-xl mx-auto">
             From technical conferences to regional trade shows, the EverCool and TECH FREE teams
@@ -387,9 +389,9 @@ export default function AboutDashboard() {
       {/* ── 6. DNA BENTO BOX ─────────────────────────────── */}
       <div className="-mx-4 md:-mx-10 border-b border-ec-border bg-ec-bg px-4 md:px-10 py-14">
         <div className="text-center mb-8">
-          <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-2">Our DNA</p>
+          <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-2">{t.aboutDnaTitle}</p>
           <h2 className="text-2xl md:text-3xl font-black text-ec-text">
-            What sets us apart.
+            {t.aboutDnaDesc}
           </h2>
         </div>
 
@@ -423,10 +425,10 @@ export default function AboutDashboard() {
       <div className="px-4 md:px-10 py-12">
         <div className="text-center mb-8">
           <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-2">
-            Credentials
+            {t.aboutCredTitle}
           </p>
           <h2 className="text-xl md:text-2xl font-black text-ec-text">
-            Recognised by the organisations that set the standard.
+            {t.aboutCredDesc}
           </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
@@ -456,10 +458,10 @@ export default function AboutDashboard() {
       <div className="-mx-4 md:-mx-10">
         <div className="bg-gradient-to-r from-blue-900 via-ec-navy to-blue-900 px-8 md:px-16 py-14 text-center">
           <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-4">
-            Let's work together
+            {t.aboutCtaLabel}
           </p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight mb-4 max-w-2xl mx-auto">
-            Partner with the experts who know your facility's air better than anyone.
+            {t.aboutCtaTitle}
           </h2>
           <p className="text-sm text-white/55 max-w-lg mx-auto mb-8 leading-relaxed">
             Whether you're specifying a new hospital HVAC system, replacing ageing AHUs in a data
@@ -471,7 +473,7 @@ export default function AboutDashboard() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-ec-teal hover:bg-ec-teal-light text-white font-bold text-sm px-7 py-3.5 rounded-xl transition-colors"
             >
-              Discuss Your Project
+              {t.aboutDiscuss}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
@@ -480,7 +482,7 @@ export default function AboutDashboard() {
               href="/services"
               className="inline-flex items-center justify-center gap-2 bg-white/8 hover:bg-white/12 text-white font-semibold text-sm px-7 py-3.5 rounded-xl border border-white/15 transition-colors"
             >
-              Explore Solutions
+              {t.exploreSolutions}
             </Link>
           </div>
         </div>
