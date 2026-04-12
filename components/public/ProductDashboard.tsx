@@ -88,6 +88,34 @@ const PRODUCTS: Product[] = [
     badge: "TECH FREE",
   },
   {
+    id: "pre-cooling-ahu",
+    name: "Pre-Cooling Air Handling Unit",
+    category: "Air Handling Units",
+    applications: ["Commercial", "Medical", "Industrial"],
+    image: null,
+    specs: [
+      "Penta-post Al frame, double-skin PU insulation, thermo-break eliminates cold bridge",
+      "Fire Rated UL94V0, air leakage <0.4 l/s.sqm, EN 1886:2007 compliant",
+      "3TR–110TR capacity, ceiling / vertical / horizontal configurations",
+    ],
+    certifications: ["EN 1886", "UL94V0"],
+    badge: "TECH FREE",
+  },
+  {
+    id: "acoustic-ec-fan-cube",
+    name: "Acoustic EC Fan Cube Module",
+    category: "Air Handling Units",
+    applications: ["Commercial", "Medical", "Industrial"],
+    image: "/images/products/acoustic-ec-fan-cube.jpg",
+    specs: [
+      "Sound insulation panel, proven low-frequency absorption and noise reduction",
+      "Free combination modular design, compact and easy assembly",
+      "Quiet operation, improved mechanical reliability, built-in redundancy",
+    ],
+    certifications: ["Patent ZL2022 21885833.7"],
+    badge: "TECH FREE",
+  },
+  {
     id: "integrated-ahu",
     name: "Integrated Multi-Functional AHU",
     category: "Air Handling Units",
@@ -171,6 +199,21 @@ const PRODUCTS: Product[] = [
       "Reduces fresh air conditioning load by 40-60%",
     ],
     certifications: ["EN 1886"],
+    badge: "TECH FREE",
+  },
+
+  {
+    id: "cabinet-fresh-air",
+    name: "Cabinet Fresh Air System X-Series",
+    category: "Fresh Air Systems",
+    applications: ["Commercial", "Medical"],
+    image: "/images/products/cabinet-fresh-air.jpg",
+    specs: [
+      "Triple filtration: G4 primary, F7 medium, H13 HEPA filter",
+      "Real-time PM2.5 & CO2 monitoring, smart remote control via mobile",
+      "DC motor saves up to 30%, air-to-air heat exchanger for energy recovery",
+    ],
+    certifications: [],
     badge: "TECH FREE",
   },
 
