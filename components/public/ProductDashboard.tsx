@@ -64,7 +64,7 @@ const PRODUCTS: Product[] = [
     name: "Mini Air Handling Unit",
     category: "Air Handling Units",
     applications: ["Commercial", "Medical"],
-    image: "/images/products/ahu-vertical.png",
+    image: "/images/products/ec-fan-coil2.png",
     specs: [
       "Anodized aluminum casing, 30mm PU insulation panels",
       "Variable speed EC fan saves 20-30% energy",
@@ -164,7 +164,7 @@ const PRODUCTS: Product[] = [
     name: "Heat Pipe Fresh Air Handler",
     category: "Fresh Air Systems",
     applications: ["Commercial", "Medical", "Industrial"],
-    image: "/images/products/heat-pipe-unit.png",
+    image: "/images/products/heatpipefreshairunit.png",
     specs: [
       "Passive heat pipe: zero extra electrical energy",
       "Pre-cooling and reheat in a single unit",
