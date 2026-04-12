@@ -499,7 +499,7 @@ export default function SolutionsDashboard() {
           <div className="md:flex-1 w-full max-w-sm md:max-w-none">
             <div className="relative aspect-[3/2] md:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-white">
               <Image
-                src="/images/products/integrated-ahu.jpg"
+                src="/images/products/integrated-ahu.png"
                 alt="TECH FREE Integrated AHU"
                 fill
                 className="object-contain"
