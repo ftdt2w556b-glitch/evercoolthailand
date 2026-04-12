@@ -186,16 +186,16 @@ export default function HomePage() {
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ec-teal/20 border border-ec-teal/30 text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-ec-teal animate-pulse" />
-            Est. 1998 · TECH FREE Authorised Distributor
+            {t.heroEyebrow}
           </div>
 
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight mb-5 max-w-2xl">
-            Pioneering Green Innovation in{" "}
-            <span className="text-ec-teal">Thailand&apos;s Air Quality</span>
+            {t.heroH1}{" "}
+            <span className="text-ec-teal">{t.heroH1Teal}</span>
           </h1>
 
           <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-xl mb-8">
-            Commercial HVAC &amp; Air Handling Solutions since 1998. Hospitals, data centres, hotels and pharmaceutical plants across Southeast Asia.
+            {t.heroBody}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 max-w-sm">
@@ -216,10 +216,10 @@ export default function HomePage() {
           {/* Floating stats */}
           <div className="flex flex-wrap gap-4 mt-10">
             {[
-              { val: "1998", label: "Founded" },
-              { val: "250k+", label: "sqft Factory" },
-              { val: "7+", label: "Certifications" },
-              { val: "8", label: "Global Markets" },
+              { val: "1998", label: t.heroStatFounded },
+              { val: "250k+", label: t.heroStatFactory },
+              { val: "7+", label: t.heroStatCerts },
+              { val: "8", label: t.heroStatMarkets },
             ].map((s) => (
               <div key={s.label} className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl px-4 py-2.5">
                 <p className="text-base font-black text-white">{s.val}</p>
@@ -234,27 +234,27 @@ export default function HomePage() {
       <section className="bg-ec-navy border-b border-white/8 px-5 md:px-10 py-4">
         <div className="flex items-center gap-2 mb-3">
           <div className="flex-1 h-px bg-white/10" />
-          <p className="text-[9px] font-bold text-white/30 uppercase tracking-widest shrink-0">Trusted By</p>
+          <p className="text-[9px] font-bold text-white/30 uppercase tracking-widest shrink-0">{t.trustBannerLabel}</p>
           <div className="flex-1 h-px bg-white/10" />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
-            { label: "Hospitals", icon: (
+            { label: t.trustHospitals, icon: (
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}><path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
             )},
-            { label: "Pharmaceutical Plants", icon: (
+            { label: t.trustPharma, icon: (
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}><path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
             )},
-            { label: "Hotels &amp; Hospitality", icon: (
+            { label: t.trustHotels, icon: (
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
             )},
-            { label: "Data Centres", icon: (
+            { label: t.trustDataCentres, icon: (
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}><path strokeLinecap="round" strokeLinejoin="round" d="M5 12H3m18 0h-2M12 5V3m0 18v-2M7.05 7.05 5.636 5.636m12.728 12.728L16.95 16.95M7.05 16.95l-1.414 1.414M18.364 5.636 16.95 7.05" /><circle cx="12" cy="12" r="4" strokeLinecap="round" /></svg>
             )},
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-2.5 bg-white/5 border border-white/8 rounded-xl px-3 py-2.5">
               <div className="text-ec-teal shrink-0">{item.icon}</div>
-              <span className="text-xs font-semibold text-white/70" dangerouslySetInnerHTML={{ __html: item.label }} />
+              <span className="text-xs font-semibold text-white/70">{item.label}</span>
             </div>
           ))}
         </div>
@@ -263,8 +263,8 @@ export default function HomePage() {
       {/* 3. CORE CATEGORIES — 3-column card grid */}
       <section className="px-5 md:px-10 py-10">
         <div className="text-center mb-7">
-          <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-1">Product Lines</p>
-          <h2 className="text-2xl md:text-3xl font-black text-ec-text">Core Solutions</h2>
+          <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-1">{t.coreEyebrow}</p>
+          <h2 className="text-2xl md:text-3xl font-black text-ec-text">{t.coreHeading}</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 
@@ -276,18 +276,18 @@ export default function HomePage() {
               </svg>
             </div>
             <h3 className="text-base font-bold text-ec-text group-hover:text-ec-teal transition-colors mb-1">TECH FREE AHU</h3>
-            <p className="text-xs text-ec-teal font-semibold mb-3">Custom Air Handling Units</p>
-            <p className="text-sm text-ec-text-muted leading-relaxed mb-4">Integrated cooling, heating, filtration and UV sterilization. Factory pre-assembled with plug-and-play site installation.</p>
+            <p className="text-xs text-ec-teal font-semibold mb-3">{t.ahuSubtitle}</p>
+            <p className="text-sm text-ec-text-muted leading-relaxed mb-4">{t.ahuBody}</p>
             <ul className="space-y-1.5">
-              {["Custom integrated cooling / heating", "VDI 6022 hygiene certified", "DDC intelligent control", "EN 1886 &amp; AHRI 1350 certified"].map((f) => (
+              {[t.ahuFeat1, t.ahuFeat2, t.ahuFeat3, t.ahuFeat4].map((f) => (
                 <li key={f} className="flex items-center gap-2 text-[11px] text-ec-text-muted">
                   <svg className="w-3 h-3 text-ec-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                  <span dangerouslySetInnerHTML={{ __html: f }} />
+                  {f}
                 </li>
               ))}
             </ul>
             <div className="mt-5 text-xs font-semibold text-ec-teal flex items-center gap-1">
-              View products <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+              {t.ahuLink} <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
             </div>
           </Link>
 
@@ -299,18 +299,18 @@ export default function HomePage() {
               </svg>
             </div>
             <h3 className="text-base font-bold text-ec-text group-hover:text-ec-teal transition-colors mb-1">Broan IAQ Units</h3>
-            <p className="text-xs text-emerald-600 font-semibold mb-3">Authorised Distributor · Thailand</p>
-            <p className="text-sm text-ec-text-muted leading-relaxed mb-4">Smart fresh air ventilation for residential and commercial spaces. Authorised Broan partner for all of Thailand.</p>
+            <p className="text-xs text-emerald-600 font-semibold mb-3">{t.broanSubtitle}</p>
+            <p className="text-sm text-ec-text-muted leading-relaxed mb-4">{t.broanBody}</p>
             <ul className="space-y-1.5">
-              {["Smart control via mobile app", "Fresh outdoor air integration", "Heat &amp; energy recovery", "Quiet duct ventilators from 16dB"].map((f) => (
+              {[t.broanFeat1, t.broanFeat2, t.broanFeat3, t.broanFeat4].map((f) => (
                 <li key={f} className="flex items-center gap-2 text-[11px] text-ec-text-muted">
                   <svg className="w-3 h-3 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                  <span dangerouslySetInnerHTML={{ __html: f }} />
+                  {f}
                 </li>
               ))}
             </ul>
             <div className="mt-5 text-xs font-semibold text-emerald-600 flex items-center gap-1">
-              Learn more <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+              {t.broanLink} <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
             </div>
           </Link>
 
@@ -322,18 +322,18 @@ export default function HomePage() {
               </svg>
             </div>
             <h3 className="text-base font-bold text-ec-text group-hover:text-ec-teal transition-colors mb-1">Air Purifiers &amp; Ventilators</h3>
-            <p className="text-xs text-violet-600 font-semibold mb-3">Residential &amp; Commercial</p>
-            <p className="text-sm text-ec-text-muted leading-relaxed mb-4">Medical-grade air purification for Thailand&apos;s high-humidity climate. Triple filtration with real-time monitoring.</p>
+            <p className="text-xs text-violet-600 font-semibold mb-3">{t.purifierSubtitle}</p>
+            <p className="text-sm text-ec-text-muted leading-relaxed mb-4">{t.purifierBody}</p>
             <ul className="space-y-1.5">
-              {["H13 HEPA filters", "PM2.5 &amp; CO2 monitoring", "UV germicidal disinfection", "Activated carbon odour removal"].map((f) => (
+              {[t.purifierFeat1, t.purifierFeat2, t.purifierFeat3, t.purifierFeat4].map((f) => (
                 <li key={f} className="flex items-center gap-2 text-[11px] text-ec-text-muted">
                   <svg className="w-3 h-3 text-violet-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                  <span dangerouslySetInnerHTML={{ __html: f }} />
+                  {f}
                 </li>
               ))}
             </ul>
             <div className="mt-5 text-xs font-semibold text-violet-600 flex items-center gap-1">
-              View range <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+              {t.purifierLink} <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
             </div>
           </Link>
 
@@ -343,8 +343,8 @@ export default function HomePage() {
       {/* 4. WHY CHOOSE US — Bento Box */}
       <section className="px-5 md:px-10 pb-10">
         <div className="text-center mb-7">
-          <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-1">Why EverCool</p>
-          <h2 className="text-2xl md:text-3xl font-black text-ec-text">Built Different</h2>
+          <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-1">{t.whyEyebrow}</p>
+          <h2 className="text-2xl md:text-3xl font-black text-ec-text">{t.whyHeading}</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-auto">
 
@@ -356,11 +356,11 @@ export default function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 className="text-lg font-black text-white mb-2">Energy Saving EC Fans</h3>
-            <p className="text-sm text-white/60 leading-relaxed mb-4">Variable speed Electronically Commutated motors adjust output to real demand, cutting fan energy use by 20 to 30% versus fixed-speed AC motors.</p>
+            <h3 className="text-lg font-black text-white mb-2">{t.whyECFansTitle}</h3>
+            <p className="text-sm text-white/60 leading-relaxed mb-4">{t.whyECFansBody}</p>
             <div className="flex items-center gap-2">
               <span className="text-2xl font-black text-ec-teal">30%</span>
-              <span className="text-xs text-white/50">energy savings<br />vs. traditional fans</span>
+              <span className="text-xs text-white/50">{t.whyECFansStat}</span>
             </div>
           </div>
 
@@ -371,8 +371,8 @@ export default function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
               </svg>
             </div>
-            <h3 className="text-sm font-bold text-ec-text mb-1">Integrated Piping</h3>
-            <p className="text-xs text-ec-text-muted leading-relaxed">All pipes and valves factory pre-welded. On site: connect water and power only.</p>
+            <h3 className="text-sm font-bold text-ec-text mb-1">{t.whyPipingTitle}</h3>
+            <p className="text-xs text-ec-text-muted leading-relaxed">{t.whyPipingBody}</p>
           </div>
 
           {/* Card — top right col 2 */}
@@ -382,8 +382,8 @@ export default function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
               </svg>
             </div>
-            <h3 className="text-sm font-bold text-ec-text mb-1">Smart DDC Control</h3>
-            <p className="text-xs text-ec-text-muted leading-relaxed">Micro-computer DDC with RS485 BMS integration. Fault diagnosis, scheduling, remote alerts.</p>
+            <h3 className="text-sm font-bold text-ec-text mb-1">{t.whyDDCTitle}</h3>
+            <p className="text-xs text-ec-text-muted leading-relaxed">{t.whyDDCBody}</p>
           </div>
 
           {/* Wide card — bottom right, spans 2 cols */}
@@ -394,8 +394,8 @@ export default function HomePage() {
               </svg>
             </div>
             <div>
-              <h3 className="text-sm font-bold text-ec-text mb-1">A-Z Custom Installations</h3>
-              <p className="text-xs text-ec-text-muted leading-relaxed">From system design and product development through control logic, software programming and on-site commissioning. EverCool and TECH FREE handle every stage in-house.</p>
+              <h3 className="text-sm font-bold text-ec-text mb-1">{t.whyAZTitle}</h3>
+              <p className="text-xs text-ec-text-muted leading-relaxed">{t.whyAZBody}</p>
             </div>
           </div>
 
@@ -570,7 +570,7 @@ export default function HomePage() {
       {/* Certifications Strip */}
       <section className="px-4 md:px-10 mt-5">
         <div className="bg-ec-card rounded-2xl border border-ec-border p-4">
-          <p className="text-[10px] font-semibold text-ec-text-muted uppercase tracking-widest mb-3">Certifications &amp; Standards</p>
+          <p className="text-[10px] font-semibold text-ec-text-muted uppercase tracking-widest mb-3">{t.certTitle}</p>
           <div className="flex flex-wrap gap-2">
             {["ISO 9001", "EN 1886", "AHRI 1350", "AHRI 410", "VDI 6022", "BS 476", "EN 13501"].map((cert) => (
               <span key={cert} className="px-2.5 py-1 rounded-lg bg-ec-teal/8 border border-ec-teal/20 text-ec-teal text-[11px] font-semibold">
@@ -578,7 +578,7 @@ export default function HomePage() {
               </span>
             ))}
           </div>
-          <p className="text-[10px] text-ec-text-muted mt-3">Danfoss Strategic Partner · Green Building Association Member</p>
+          <p className="text-[10px] text-ec-text-muted mt-3">{t.certPartner}</p>
         </div>
       </section>
 
@@ -586,18 +586,18 @@ export default function HomePage() {
       <section className="px-4 md:px-10 mt-5">
         <div className="flex items-center justify-between mb-3">
           <div>
-            <h2 className="text-[17px] font-bold text-ec-text">TECH FREE Products</h2>
-            <p className="text-xs text-ec-text-muted mt-0.5">Industrial AHU systems &amp; components</p>
+            <h2 className="text-[17px] font-bold text-ec-text">{t.techFreeTitle}</h2>
+            <p className="text-xs text-ec-text-muted mt-0.5">{t.techFreeSub}</p>
           </div>
           <Link href="/products" className="text-xs font-semibold text-ec-teal hover:underline shrink-0">
-            View All &rarr;
+            {t.viewAll} &rarr;
           </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
             {
-              label: "Air Handling Units",
-              sub: "Modular, Integrated, Hygienic",
+              label: t.prodAHU,
+              sub: t.tfAHUSub,
               href: "/products#ahu",
               icon: (
                 <svg className="w-5 h-5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
@@ -607,8 +607,8 @@ export default function HomePage() {
               bg: "bg-sky-500/10",
             },
             {
-              label: "Heat Recovery",
-              sub: "Heat Pipe, Dual System",
+              label: t.tfHeatLabel,
+              sub: t.tfHeatSub,
               href: "/products#heat",
               icon: (
                 <svg className="w-5 h-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
@@ -618,8 +618,8 @@ export default function HomePage() {
               bg: "bg-violet-500/10",
             },
             {
-              label: "Outdoor Units",
-              sub: "Packaged, Dry Cooler",
+              label: t.tfOutdoorLabel,
+              sub: t.tfOutdoorSub,
               href: "/products#outdoor",
               icon: (
                 <svg className="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
@@ -629,8 +629,8 @@ export default function HomePage() {
               bg: "bg-emerald-500/10",
             },
             {
-              label: "Components",
-              sub: "Coils, EC Fan Coil",
+              label: t.tfComponentsLabel,
+              sub: t.tfComponentsSub,
               href: "/products#components",
               icon: (
                 <svg className="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
@@ -693,7 +693,7 @@ export default function HomePage() {
           <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
-          Chat on WhatsApp
+          {t.bookWhatsApp}
         </a>
       </section>
 

@@ -333,6 +333,77 @@ const en = {
   prodMedical: "Medical",
   prodIndustrial: "Industrial",
   prodViewSpecs: "View Tech Specs",
+
+  // Homepage — New Hero
+  heroEyebrow: "Est. 1998 · TECH FREE Authorised Distributor",
+  heroH1: "Pioneering Green Innovation in",
+  heroH1Teal: "Thailand's Air Quality",
+  heroBody: "Commercial HVAC & Air Handling Solutions since 1998. Hospitals, data centres, hotels and pharmaceutical plants across Southeast Asia.",
+  heroStatFounded: "Founded",
+  heroStatFactory: "sqft Factory",
+  heroStatCerts: "Certifications",
+  heroStatMarkets: "Global Markets",
+
+  // Homepage — Trust Banner
+  trustBannerLabel: "Trusted By",
+  trustHospitals: "Hospitals",
+  trustPharma: "Pharmaceutical Plants",
+  trustHotels: "Hotels & Hospitality",
+  trustDataCentres: "Data Centres",
+
+  // Homepage — Core Solutions section
+  coreEyebrow: "Product Lines",
+  coreHeading: "Core Solutions",
+  ahuSubtitle: "Custom Air Handling Units",
+  ahuBody: "Integrated cooling, heating, filtration and UV sterilization. Factory pre-assembled with plug-and-play site installation.",
+  ahuFeat1: "Custom integrated cooling / heating",
+  ahuFeat2: "VDI 6022 hygiene certified",
+  ahuFeat3: "DDC intelligent control",
+  ahuFeat4: "EN 1886 & AHRI 1350 certified",
+  ahuLink: "View products",
+  broanSubtitle: "Authorised Distributor · Thailand",
+  broanBody: "Smart fresh air ventilation for residential and commercial spaces. Authorised Broan partner for all of Thailand.",
+  broanFeat1: "Smart control via mobile app",
+  broanFeat2: "Fresh outdoor air integration",
+  broanFeat3: "Heat & energy recovery",
+  broanFeat4: "Quiet duct ventilators from 16dB",
+  broanLink: "Learn more",
+  purifierSubtitle: "Residential & Commercial",
+  purifierBody: "Medical-grade air purification for Thailand's high-humidity climate. Triple filtration with real-time monitoring.",
+  purifierFeat1: "H13 HEPA filters",
+  purifierFeat2: "PM2.5 & CO2 monitoring",
+  purifierFeat3: "UV germicidal disinfection",
+  purifierFeat4: "Activated carbon odour removal",
+  purifierLink: "View range",
+
+  // Homepage — Why EverCool bento
+  whyEyebrow: "Why EverCool",
+  whyHeading: "Built Different",
+  whyECFansTitle: "Energy Saving EC Fans",
+  whyECFansBody: "Variable speed Electronically Commutated motors adjust output to real demand, cutting fan energy use by 20 to 30% versus fixed-speed AC motors.",
+  whyECFansStat: "energy savings vs. traditional fans",
+  whyPipingTitle: "Integrated Piping",
+  whyPipingBody: "All pipes and valves factory pre-welded. On site: connect water and power only.",
+  whyDDCTitle: "Smart DDC Control",
+  whyDDCBody: "Micro-computer DDC with RS485 BMS integration. Fault diagnosis, scheduling, remote alerts.",
+  whyAZTitle: "A-Z Custom Installations",
+  whyAZBody: "From system design and product development through control logic, software programming and on-site commissioning. EverCool and TECH FREE handle every stage in-house.",
+
+  // Homepage — Certifications strip
+  certTitle: "Certifications & Standards",
+  certPartner: "Danfoss Strategic Partner · Green Building Association Member",
+
+  // Homepage — TECH FREE Products teaser
+  techFreeTitle: "TECH FREE Products",
+  techFreeSub: "Industrial AHU systems & components",
+  viewAll: "View All",
+  tfAHUSub: "Modular, Integrated, Hygienic",
+  tfHeatLabel: "Heat Recovery",
+  tfHeatSub: "Heat Pipe, Dual System",
+  tfOutdoorLabel: "Outdoor Units",
+  tfOutdoorSub: "Packaged, Dry Cooler",
+  tfComponentsLabel: "Components",
+  tfComponentsSub: "Coils, EC Fan Coil",
 };
 
 const th: typeof en = {
@@ -663,6 +734,77 @@ const th: typeof en = {
   prodMedical: "การแพทย์",
   prodIndustrial: "อุตสาหกรรม",
   prodViewSpecs: "ดูสเปคทางเทคนิค",
+
+  // Homepage — New Hero
+  heroEyebrow: "ก่อตั้ง 1998 · ตัวแทนจำหน่ายอย่างเป็นทางการ TECH FREE",
+  heroH1: "บุกเบิกนวัตกรรมสีเขียวใน",
+  heroH1Teal: "คุณภาพอากาศของไทย",
+  heroBody: "โซลูชัน HVAC เชิงพาณิชย์และระบบส่งลมเย็นตั้งแต่ปี 1998 โรงพยาบาล ศูนย์ข้อมูล โรงแรม และโรงงานยาทั่วเอเชียตะวันออกเฉียงใต้",
+  heroStatFounded: "ก่อตั้ง",
+  heroStatFactory: "ตร.ฟุต โรงงาน",
+  heroStatCerts: "การรับรอง",
+  heroStatMarkets: "ตลาดโลก",
+
+  // Homepage — Trust Banner
+  trustBannerLabel: "ไว้วางใจโดย",
+  trustHospitals: "โรงพยาบาล",
+  trustPharma: "โรงงานยา",
+  trustHotels: "โรงแรมและการบริการ",
+  trustDataCentres: "ศูนย์ข้อมูล",
+
+  // Homepage — Core Solutions section
+  coreEyebrow: "สายผลิตภัณฑ์",
+  coreHeading: "โซลูชันหลัก",
+  ahuSubtitle: "เครื่องส่งลมเย็นสั่งทำ",
+  ahuBody: "ระบบทำความเย็น ทำความร้อน กรองอากาศ และฆ่าเชื้อด้วย UV แบบครบวงจร ประกอบสำเร็จจากโรงงาน ติดตั้งง่ายที่หน้างาน",
+  ahuFeat1: "ระบบทำความเย็น/ความร้อนแบบครบวงจร",
+  ahuFeat2: "ได้รับการรับรอง VDI 6022 ด้านสุขอนามัย",
+  ahuFeat3: "ระบบควบคุม DDC อัจฉริยะ",
+  ahuFeat4: "ได้รับการรับรอง EN 1886 และ AHRI 1350",
+  ahuLink: "ดูผลิตภัณฑ์",
+  broanSubtitle: "ตัวแทนจำหน่ายอย่างเป็นทางการ · ประเทศไทย",
+  broanBody: "ระบบระบายอากาศสดอัจฉริยะสำหรับที่อยู่อาศัยและพาณิชย์ ตัวแทน Broan อย่างเป็นทางการทั่วไทย",
+  broanFeat1: "ควบคุมผ่านแอปมือถือ",
+  broanFeat2: "รวมอากาศสดจากภายนอก",
+  broanFeat3: "การกู้คืนความร้อนและพลังงาน",
+  broanFeat4: "พัดลมท่อเงียบตั้งแต่ 16dB",
+  broanLink: "เรียนรู้เพิ่มเติม",
+  purifierSubtitle: "ที่อยู่อาศัยและพาณิชย์",
+  purifierBody: "เครื่องฟอกอากาศระดับการแพทย์สำหรับภูมิอากาศชื้นสูงของไทย ระบบกรองสามชั้นพร้อมการตรวจสอบแบบเรียลไทม์",
+  purifierFeat1: "ตัวกรอง H13 HEPA",
+  purifierFeat2: "ตรวจวัด PM2.5 และ CO2",
+  purifierFeat3: "ฆ่าเชื้อด้วยแสง UV",
+  purifierFeat4: "กรองกลิ่นด้วยถ่านกัมมันต์",
+  purifierLink: "ดูสินค้า",
+
+  // Homepage — Why EverCool bento
+  whyEyebrow: "ทำไมต้อง EverCool",
+  whyHeading: "สร้างต่างจากคนอื่น",
+  whyECFansTitle: "พัดลม EC ประหยัดพลังงาน",
+  whyECFansBody: "มอเตอร์ Electronically Commutated ความเร็วแปรผันปรับตามความต้องการจริง ลดการใช้พลังงานพัดลม 20–30% เมื่อเทียบกับมอเตอร์ AC ความเร็วคงที่",
+  whyECFansStat: "ประหยัดพลังงาน เทียบพัดลมแบบดั้งเดิม",
+  whyPipingTitle: "ท่อแบบครบวงจร",
+  whyPipingBody: "ท่อและวาล์วทั้งหมดเชื่อมสำเร็จจากโรงงาน ที่หน้างาน: เชื่อมต่อน้ำและไฟเท่านั้น",
+  whyDDCTitle: "ระบบควบคุม DDC อัจฉริยะ",
+  whyDDCBody: "DDC ไมโครคอมพิวเตอร์พร้อม RS485 BMS วินิจฉัยข้อผิดพลาด กำหนดตาราง แจ้งเตือนระยะไกล",
+  whyAZTitle: "การติดตั้งแบบครบวงจร A-Z",
+  whyAZBody: "ตั้งแต่การออกแบบระบบ พัฒนาผลิตภัณฑ์ ตรรกะการควบคุม การเขียนโปรแกรม ไปจนถึงการเปิดใช้งานที่หน้างาน EverCool และ TECH FREE ดูแลทุกขั้นตอนภายในองค์กร",
+
+  // Homepage — Certifications strip
+  certTitle: "การรับรองและมาตรฐาน",
+  certPartner: "พาร์ทเนอร์เชิงกลยุทธ์ Danfoss · สมาชิกสมาคมอาคารสีเขียว",
+
+  // Homepage — TECH FREE Products teaser
+  techFreeTitle: "ผลิตภัณฑ์ TECH FREE",
+  techFreeSub: "ระบบ AHU อุตสาหกรรมและชิ้นส่วน",
+  viewAll: "ดูทั้งหมด",
+  tfAHUSub: "โมดูลาร์ ครบวงจร ถูกสุขอนามัย",
+  tfHeatLabel: "การกู้คืนความร้อน",
+  tfHeatSub: "Heat Pipe ระบบคู่",
+  tfOutdoorLabel: "ชุดระบายความร้อนภายนอก",
+  tfOutdoorSub: "Packaged, Dry Cooler",
+  tfComponentsLabel: "ชิ้นส่วน",
+  tfComponentsSub: "คอยล์, EC Fan Coil",
 };
 
 export const translations: Record<Lang, typeof en> = { en, th };
