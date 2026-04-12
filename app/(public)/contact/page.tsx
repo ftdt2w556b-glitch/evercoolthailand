@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Evercool Thailand. Call, WhatsApp, or send a message. Serving Bangkok, Koh Tao and Surat Thani.",
+    "Get in touch with Evercool Thailand. Call, WhatsApp, or send a message. Serving all of Thailand.",
 };
 
 export default function ContactPage() {
@@ -53,17 +53,10 @@ export default function ContactPage() {
           </div>
         </a>
 
-        <div className="flex gap-3">
-          <div className="flex-1 bg-ec-card rounded-2xl border border-ec-border p-4">
-            <p className="text-xs font-semibold text-ec-text-muted uppercase tracking-wide mb-1">Hours</p>
-            <p className="text-sm font-semibold text-ec-text">Mon to Sat</p>
-            <p className="text-xs text-ec-text-muted">8:00 to 18:00</p>
-          </div>
-          <div className="flex-1 bg-ec-card rounded-2xl border border-ec-border p-4">
-            <p className="text-xs font-semibold text-ec-text-muted uppercase tracking-wide mb-1">Areas</p>
-            <p className="text-sm font-semibold text-ec-text">Bangkok</p>
-            <p className="text-xs text-ec-text-muted">Koh Tao • Surat</p>
-          </div>
+        <div className="bg-ec-card rounded-2xl border border-ec-border p-4">
+          <p className="text-xs font-semibold text-ec-text-muted uppercase tracking-wide mb-1">Hours</p>
+          <p className="text-sm font-semibold text-ec-text">Mon to Sat</p>
+          <p className="text-xs text-ec-text-muted">8:00 to 18:00</p>
         </div>
 
         {/* Address */}

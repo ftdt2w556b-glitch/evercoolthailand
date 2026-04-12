@@ -3,7 +3,6 @@ import Link from "next/link";
 const PHONE = "+66 95-562-2892";
 const PHONE_RAW = "66955622892";
 const EMAIL = "info@evercoolthailand.com";
-const JOBTHAI_URL = "https://www.jobthai.com/en/company/98887";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -129,18 +128,6 @@ export default function Footer() {
               <p className="text-xs text-white/45 leading-relaxed">383 (3rd Floor) Bond Street Road<br />Bangphut, Pakkret, Nonthaburi 11120</p>
             </div>
 
-            {/* JobThai Recruitment */}
-            <a
-              href={JOBTHAI_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-white/40 hover:text-white/70 border border-white/10 hover:border-white/20 rounded-lg px-2.5 py-1.5 transition-all"
-            >
-              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              We&apos;re hiring · JobThai
-            </a>
           </div>
         </div>
 
@@ -153,9 +140,7 @@ export default function Footer() {
             <span className="text-[10px] text-white/30">Licensed HVAC Contractor</span>
             <span className="text-white/20">·</span>
             <div className="flex gap-1.5">
-              {["Bangkok", "Koh Tao", "Surat Thani"].map((a) => (
-                <span key={a} className="text-[9px] font-semibold text-white/30 border border-white/10 rounded px-1.5 py-0.5">{a}</span>
-              ))}
+              <span className="text-[9px] font-semibold text-white/30 border border-white/10 rounded px-1.5 py-0.5">Thailand</span>
             </div>
           </div>
         </div>
