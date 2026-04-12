@@ -149,22 +149,19 @@ function BookingCalendar({ selected, onSelect }: { selected: string; onSelect: (
 const TOTAL_STEPS = 5;
 
 function StepBar({ step, labels }: { step: number; labels: string[] }) {
+  const pct = Math.round(((step + 1) / labels.length) * 100);
   return (
-    <div className="flex items-center gap-1 mb-6">
-      {labels.map((label, i) => (
-        <div key={i} className="flex-1 flex flex-col items-center gap-1">
-          <div
-            className={`h-1 w-full rounded-full transition-all ${
-              i < step ? "bg-ec-teal" : i === step ? "bg-ec-teal/50" : "bg-ec-border"
-            }`}
-          />
-          {i === step && (
-            <span className="text-[10px] font-semibold text-ec-teal text-center leading-tight whitespace-nowrap">
-              {label}
-            </span>
-          )}
-        </div>
-      ))}
+    <div className="mb-6">
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-xs font-semibold text-ec-teal">{labels[step]}</span>
+        <span className="text-xs text-ec-text-muted">Step {step + 1} of {labels.length}</span>
+      </div>
+      <div className="h-1.5 bg-ec-border rounded-full overflow-hidden">
+        <div
+          className="h-full bg-ec-teal rounded-full transition-all duration-300"
+          style={{ width: `${pct}%` }}
+        />
+      </div>
     </div>
   );
 }

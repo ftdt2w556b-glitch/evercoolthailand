@@ -547,7 +547,7 @@ export default function SolutionsDashboard() {
       </div>
 
       {/* ── SECTION 3: 8 Components Grid ──────────────────── */}
-      <div className="-mx-4 md:-mx-10 bg-ec-card border-y border-ec-border px-4 md:px-10 py-8 md:py-12">
+      <div className="bg-ec-card border-y border-ec-border px-4 md:-mx-10 md:px-10 py-8 md:py-12">
         <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-3">
           Unit Components
         </p>
@@ -559,13 +559,14 @@ export default function SolutionsDashboard() {
         </p>
 
         {/* Main components diagram */}
-        <div className="mt-6 rounded-2xl overflow-hidden bg-slate-50 shadow-lg max-w-2xl">
+        <div className="mt-6 rounded-2xl overflow-hidden bg-slate-50 shadow-lg max-w-2xl mx-auto">
           <Image
             src="/images/solutions/ahu-components-diagram.jpg"
             alt="TECH FREE AHU - labeled component diagram"
             width={1239}
             height={811}
             className="w-full h-auto block"
+            sizes="(max-width: 768px) 100vw, 672px"
           />
         </div>
 
@@ -768,7 +769,7 @@ export default function SolutionsDashboard() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`shrink-0 px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors whitespace-nowrap ${
+              className={`flex-1 text-center px-2 md:px-5 py-3 md:py-3.5 text-xs md:text-sm font-semibold border-b-2 transition-colors ${
                 activeTab === tab.id
                   ? "border-ec-teal text-ec-teal"
                   : "border-transparent text-ec-text-muted hover:text-ec-text"
