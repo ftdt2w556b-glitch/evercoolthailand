@@ -8,8 +8,9 @@ export const LANGUAGES: { code: Lang; label: string; flag: string }[] = [
 const en = {
   // Navigation
   navHome: "Home",
-  navServices: "Services",
+  navServices: "Solutions",
   navBook: "Book",
+  navAbout: "About",
   navAccount: "Account",
   navLearn: "Learn",
   navProducts: "Products",
@@ -279,6 +280,7 @@ const th: typeof en = {
   navHome: "หน้าแรก",
   navServices: "บริการ",
   navBook: "จอง",
+  navAbout: "เกี่ยวกับ",
   navAccount: "บัญชี",
   navLearn: "เรียนรู้",
   navProducts: "สินค้า",

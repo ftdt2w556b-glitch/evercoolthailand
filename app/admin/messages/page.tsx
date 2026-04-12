@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { createAdminClient } from "@/lib/supabase/server";
 import StatusSelect from "@/components/admin/StatusSelect";
 
-export const metadata: Metadata = { title: "Messages — Admin" };
+export const metadata: Metadata = { title: "Messages | Admin" };
 export const dynamic = "force-dynamic";
 
 const MESSAGE_STATUSES = [

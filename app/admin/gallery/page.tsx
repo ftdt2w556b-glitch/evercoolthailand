@@ -3,7 +3,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import DeleteButton from "@/components/admin/DeleteButton";
 import AdminGalleryForm from "@/components/admin/AdminGalleryForm";
 
-export const metadata: Metadata = { title: "Gallery — Admin" };
+export const metadata: Metadata = { title: "Gallery | Admin" };
 export const dynamic = "force-dynamic";
 
 export default async function AdminGalleryPage() {

@@ -178,6 +178,11 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-ec-teal via-ec-teal-light to-transparent pointer-events-none" />
 
         <div className="relative px-5 md:px-10 pt-14 pb-16 md:pt-20 md:pb-24">
+          {/* Company name */}
+          <p className="text-sm md:text-base font-semibold text-white/60 tracking-wide mb-3">
+            Ever Cool Air Conditioning Thailand
+          </p>
+
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ec-teal/20 border border-ec-teal/30 text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-ec-teal animate-pulse" />
@@ -352,7 +357,7 @@ export default function HomePage() {
               </svg>
             </div>
             <h3 className="text-lg font-black text-white mb-2">Energy Saving EC Fans</h3>
-            <p className="text-sm text-white/60 leading-relaxed mb-4">Variable speed Electronically Commutated motors adjust output to real demand — cutting fan energy use by 20 to 30% versus fixed-speed AC motors.</p>
+            <p className="text-sm text-white/60 leading-relaxed mb-4">Variable speed Electronically Commutated motors adjust output to real demand, cutting fan energy use by 20 to 30% versus fixed-speed AC motors.</p>
             <div className="flex items-center gap-2">
               <span className="text-2xl font-black text-ec-teal">30%</span>
               <span className="text-xs text-white/50">energy savings<br />vs. traditional fans</span>
@@ -390,7 +395,7 @@ export default function HomePage() {
             </div>
             <div>
               <h3 className="text-sm font-bold text-ec-text mb-1">A-Z Custom Installations</h3>
-              <p className="text-xs text-ec-text-muted leading-relaxed">From system design and product development through control logic, software programming and on-site commissioning — EverCool and TECH FREE handle every stage in-house.</p>
+              <p className="text-xs text-ec-text-muted leading-relaxed">From system design and product development through control logic, software programming and on-site commissioning. EverCool and TECH FREE handle every stage in-house.</p>
             </div>
           </div>
 
@@ -399,7 +404,6 @@ export default function HomePage() {
 
       {/* ─── Divider ─────────────────────────────────────────── */}
       <div className="mx-5 md:mx-10 border-t border-ec-border mb-2 opacity-50" />
-      <p className="text-center text-[10px] text-ec-text-muted py-2 mb-2 uppercase tracking-widest">Existing Sections Below</p>
       <div className="mx-5 md:mx-10 border-t border-ec-border mb-4 opacity-50" />
 
       {/* ───────────────────────────────────────────────────────── */}
@@ -424,7 +428,7 @@ export default function HomePage() {
               {t.heroTagline}
             </h1>
             <p className="text-sm md:text-base text-white/70 leading-relaxed max-w-[340px]">
-              AC installation, repair, maintenance &amp; air purifiers. Serving Bangkok, Koh Tao and Surat Thani.
+              HVAC Air Solutions and integrated air handling units (AHU). Serving all of Thailand.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mt-6 md:max-w-sm">
           <Link
@@ -541,10 +545,10 @@ export default function HomePage() {
           <p className="text-xs text-white/50 mb-4">A branch of Ever Cool HK, sister company of Tech Free. Est. 1998.</p>
           <div className="flex flex-col gap-3 relative">
             {[
-              { title: "International Certifications", desc: "ISO 9001, EN1886, AHRI 1350, VDI 6022, and BS476 fire rated — meeting the highest global HVAC standards" },
+              { title: "International Certifications", desc: "ISO 9001, EN1886, AHRI 1350, VDI 6022, and BS476 fire rated. Meeting the highest global HVAC standards." },
               { title: "20+ Years in HVAC", desc: "Founded 1998 in Hong Kong and Macau, now serving all of Thailand from our Nonthaburi office" },
               { title: "Custom AHU Manufacturing", desc: "250,000+ sqft factory producing TECH FREE air handling units for hospitals, hotels, and commercial buildings" },
-              { title: "Authorised Broan Distributor", desc: "Official Broan ventilation partner for Thailand — residential and commercial fresh air solutions" },
+              { title: "Authorised Broan Distributor", desc: "Official Broan ventilation partner for Thailand: residential and commercial fresh air solutions." },
               { title: "VDI 6022 Certified Technicians", desc: "Our Thailand team holds VDI 6022 hygiene certification for air conditioning systems" },
             ].map((item) => (
               <div key={item.title} className="flex gap-3">

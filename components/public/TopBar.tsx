@@ -9,10 +9,9 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 const DESKTOP_NAV = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Solutions" },
   { href: "/products", label: "Products" },
   { href: "/about", label: "About" },
-  { href: "/book", label: "Book" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -59,6 +58,15 @@ export default function TopBar() {
             </Link>
           ))}
         </nav>
+
+        {/* Next Event — mobile only, centre of header */}
+        <Link
+          href="/contact"
+          className="md:hidden flex items-center gap-1.5 text-[11px] font-bold text-ec-teal border border-ec-teal/40 bg-ec-teal/10 hover:bg-ec-teal/20 px-3 py-1.5 rounded-full transition-colors"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-ec-teal animate-pulse shrink-0" />
+          Next Event
+        </Link>
 
         {/* Right side actions */}
         <div className="flex items-center gap-1">

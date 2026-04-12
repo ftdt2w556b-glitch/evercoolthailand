@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { createAdminClient } from "@/lib/supabase/server";
 import StatusSelect from "@/components/admin/StatusSelect";
 
-export const metadata: Metadata = { title: "Quotes — Admin" };
+export const metadata: Metadata = { title: "Quotes | Admin" };
 export const dynamic = "force-dynamic";
 
 const QUOTE_STATUSES = [

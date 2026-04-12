@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { createAdminClient } from "@/lib/supabase/server";
 import ServicesGrid from "@/components/public/ServicesGrid";
+import SolutionsDashboard from "@/components/public/SolutionsDashboard";
+import BookingWizard from "@/components/public/BookingWizard";
 import { serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Solutions",
   description:
     "AC installation, repair, maintenance, air purifiers, custom AHU, and IAQ consultation in Thailand. Bangkok, Koh Tao & Surat Thani.",
 };
@@ -20,15 +25,26 @@ export default async function ServicesPage() {
   const allServices = services ?? [];
 
   return (
-    <main className="page-enter px-4 md:px-10 pt-6 pb-8">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-ec-text leading-tight">All Services</h1>
-        <p className="text-sm text-ec-text-muted mt-1">
-          Professional HVAC &amp; IAQ solutions for Thailand
-        </p>
+    <main>
+
+      <SolutionsDashboard />
+
+      <div className="px-4 md:px-10 pt-2 pb-8">
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold text-ec-text leading-tight">All Services</h2>
+          <p className="text-sm text-ec-text-muted mt-1">
+            Professional HVAC &amp; IAQ solutions for Thailand
+          </p>
+        </div>
+        <ServicesGrid services={allServices} />
       </div>
 
-      <ServicesGrid services={allServices} />
+      {/* Booking wizard */}
+      <div className="border-t border-ec-border mt-2">
+        <Suspense>
+          <BookingWizard />
+        </Suspense>
+      </div>
 
       {/* Schema */}
       <script

@@ -4,13 +4,18 @@ import { createAdminClient } from "@/lib/supabase/server";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://evercoolthailand.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const admin = createAdminClient();
-
-  // Fetch published articles for dynamic routes
-  const { data: articles } = await admin
-    .from("articles")
-    .select("slug, updated_at")
-    .eq("published", true);
+  // Gracefully skip DB fetch if service role key is not configured (local builds)
+  let articles: { slug: string; updated_at: string | null }[] = [];
+  try {
+    const admin = createAdminClient();
+    const { data } = await admin
+      .from("articles")
+      .select("slug, updated_at")
+      .eq("published", true);
+    articles = data ?? [];
+  } catch {
+    // no-op — service role key not available in local build
+  }
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },

@@ -5,6 +5,8 @@ import ACSizingCalculator from "@/components/public/ACSizingCalculator";
 import EnergyCostCalculator from "@/components/public/EnergyCostCalculator";
 import { breadcrumbJsonLd } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Learning Hub",
   description:

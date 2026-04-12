@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ProductDashboard from "@/components/public/ProductDashboard";
 
 export const metadata: Metadata = {
   title: "Products | TECH FREE AHU Systems",
@@ -229,6 +230,37 @@ const CERT_BADGES = ["ISO 9001", "EN 1886", "AHRI 1350", "AHRI 410", "VDI 6022",
 export default function ProductsPage() {
   return (
     <main className="pb-8">
+
+      {/* Dashboard hero */}
+      <div className="bg-gradient-to-r from-ec-navy via-slate-900 to-ec-navy px-4 md:px-8 pt-8 pb-7 border-b border-white/8">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-[10px] font-bold text-ec-teal uppercase tracking-widest mb-2">
+              Product Catalog
+            </p>
+            <h1 className="text-2xl md:text-3xl font-black text-white leading-tight mb-2">
+              HVAC &amp; IAQ Equipment
+            </h1>
+            <p className="text-sm text-white/55 max-w-lg leading-relaxed">
+              Browse and filter our complete range of TECH FREE and Broan products for
+              commercial, medical and industrial projects across Thailand.
+            </p>
+          </div>
+          <Link
+            href="/quote?service=custom-ahu"
+            className="shrink-0 hidden md:inline-flex items-center gap-1.5 text-xs font-semibold bg-ec-teal hover:bg-ec-teal-light text-white px-4 py-2.5 rounded-xl transition-colors mt-1"
+          >
+            Get a Quote
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
+        </div>
+      </div>
+
+      {/* Interactive dashboard (client component) */}
+      <ProductDashboard />
+
       {/* Hero */}
       <div className="bg-ec-navy px-4 md:px-10 pt-8 pb-10">
         <div className="mb-3">

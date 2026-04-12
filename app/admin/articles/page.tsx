@@ -3,7 +3,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import DeleteButton from "@/components/admin/DeleteButton";
 import AdminArticleForm from "@/components/admin/AdminArticleForm";
 
-export const metadata: Metadata = { title: "Articles — Admin" };
+export const metadata: Metadata = { title: "Articles | Admin" };
 export const dynamic = "force-dynamic";
 
 export default async function AdminArticlesPage() {

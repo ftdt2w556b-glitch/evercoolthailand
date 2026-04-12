@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { createAdminClient } from "@/lib/supabase/server";
 
-export const metadata: Metadata = { title: "Customers — Admin" };
+export const metadata: Metadata = { title: "Customers | Admin" };
 export const dynamic = "force-dynamic";
 
 export default async function AdminCustomersPage() {

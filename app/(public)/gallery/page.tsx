@@ -3,6 +3,8 @@ import { createAdminClient } from "@/lib/supabase/server";
 import GalleryGrid from "@/components/public/GalleryGrid";
 import { breadcrumbJsonLd } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Our Work",
   description:
