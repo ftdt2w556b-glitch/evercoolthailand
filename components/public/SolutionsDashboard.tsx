@@ -89,22 +89,6 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 function FrameTab() {
   return (
     <div className="space-y-8">
-      {/* Factory photo */}
-      <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden shadow-lg">
-        <Image
-          src="/images/solutions/solutions-sf-img-10.jpg"
-          alt="TECH FREE AHU manufacturing facility"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 80vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 p-4">
-          <p className="text-[10px] font-bold text-white/70 uppercase tracking-widest mb-0.5">TECH FREE</p>
-          <p className="text-sm font-bold text-white">Manufacturing &amp; Assembly Facility</p>
-        </div>
-      </div>
-
       {/* Intro */}
       <div className="bg-gradient-to-br from-ec-navy to-slate-900 rounded-2xl p-6 text-white">
         <div className="flex items-start gap-4">
@@ -501,23 +485,14 @@ export default function SolutionsDashboard() {
         </h2>
 
         <div className="flex flex-col md:flex-row gap-10 items-start">
-          {/* Left: image grid */}
-          <div className="md:flex-1 grid grid-cols-2 gap-4">
+          {/* Left: single product image */}
+          <div className="md:flex-1">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-white">
               <Image
                 src="/images/products/integrated-ahu.jpg"
                 alt="TECH FREE Integrated AHU"
                 fill
-                className="object-cover rounded-2xl"
-                sizes="(max-width: 768px) 100vw, 45vw"
-              />
-            </div>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-white">
-              <Image
-                src="/images/products/modular-ahu.jpg"
-                alt="TECH FREE Modular AHU"
-                fill
-                className="object-contain rounded-2xl"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, 45vw"
               />
             </div>
@@ -583,14 +558,14 @@ export default function SolutionsDashboard() {
           Every TECH FREE AHU is built from precision-engineered subsystems, each independently certified to international standards.
         </p>
 
-        {/* Main components diagram */}
-        <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mt-8 bg-slate-50 shadow-lg">
+        {/* Main components diagram — natural dimensions, nothing clipped */}
+        <div className="w-full mt-8 rounded-2xl overflow-hidden bg-slate-50 shadow-lg">
           <Image
             src="/images/solutions/ahu-components-diagram.jpg"
             alt="TECH FREE AHU - labeled component diagram"
-            fill
-            className="object-contain"
-            sizes="(max-width: 768px) 100vw, 80vw"
+            width={1024}
+            height={670}
+            className="w-full h-auto"
           />
         </div>
 
