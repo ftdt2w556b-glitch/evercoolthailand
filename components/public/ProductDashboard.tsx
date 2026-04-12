@@ -92,7 +92,7 @@ const PRODUCTS: Product[] = [
     name: "Pre-Cooling Air Handling Unit",
     category: "Air Handling Units",
     applications: ["Commercial", "Medical", "Industrial"],
-    image: null,
+    image: "/images/products/acoustic-ec-fan-cube.jpg",
     specs: [
       "Penta-post Al frame, double-skin PU insulation, thermo-break eliminates cold bridge",
       "Fire Rated UL94V0, air leakage <0.4 l/s.sqm, EN 1886:2007 compliant",
