@@ -89,6 +89,22 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 function FrameTab() {
   return (
     <div className="space-y-8">
+      {/* Factory photo */}
+      <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden shadow-lg">
+        <Image
+          src="/images/solutions/solutions-sf-img-10.jpg"
+          alt="TECH FREE AHU manufacturing facility"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 80vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 p-4">
+          <p className="text-[10px] font-bold text-white/70 uppercase tracking-widest mb-0.5">TECH FREE</p>
+          <p className="text-sm font-bold text-white">Manufacturing &amp; Assembly Facility</p>
+        </div>
+      </div>
+
       {/* Intro */}
       <div className="bg-gradient-to-br from-ec-navy to-slate-900 rounded-2xl p-6 text-white">
         <div className="flex items-start gap-4">
@@ -170,6 +186,22 @@ function FrameTab() {
 function FansTab() {
   return (
     <div className="space-y-8">
+      {/* Performance lab photo */}
+      <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden shadow-lg">
+        <Image
+          src="/images/solutions/solutions-img-03.jpg"
+          alt="TECH FREE fan performance testing laboratory"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 80vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 p-4">
+          <p className="text-[10px] font-bold text-white/70 uppercase tracking-widest mb-0.5">TECH FREE</p>
+          <p className="text-sm font-bold text-white">Integrated Performance Testing Laboratory</p>
+        </div>
+      </div>
+
       {/* EC vs AC comparison */}
       <div>
         <SectionLabel>Motor Technology Comparison</SectionLabel>
@@ -471,9 +503,9 @@ export default function SolutionsDashboard() {
         <div className="flex flex-col md:flex-row gap-10 items-start">
           {/* Left: image grid */}
           <div className="md:flex-1 grid grid-cols-2 gap-4">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-white">
               <Image
-                src="/images/products/integrated-ahu-2.jpg"
+                src="/images/products/integrated-ahu.jpg"
                 alt="TECH FREE Integrated AHU"
                 fill
                 className="object-cover rounded-2xl"
@@ -551,7 +583,18 @@ export default function SolutionsDashboard() {
           Every TECH FREE AHU is built from precision-engineered subsystems, each independently certified to international standards.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+        {/* Main components image */}
+        <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden mt-8 bg-white shadow-lg">
+          <Image
+            src="/images/products/integrated-ahu.jpg"
+            alt="TECH FREE Integrated AHU - main components overview"
+            fill
+            className="object-contain"
+            sizes="(max-width: 768px) 100vw, 80vw"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
           {/* 1. Frame */}
           <div className="bg-ec-bg border border-ec-border rounded-2xl p-5 border-l-4 border-l-sky-500">
             <div className="flex items-center gap-2 mb-2">
