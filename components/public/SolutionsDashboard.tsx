@@ -512,9 +512,9 @@ export default function SolutionsDashboard() {
                 sizes="(max-width: 768px) 100vw, 45vw"
               />
             </div>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-slate-950">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-white">
               <Image
-                src="/images/products/modular-ahu-2.png"
+                src="/images/products/modular-ahu.jpg"
                 alt="TECH FREE Modular AHU"
                 fill
                 className="object-contain rounded-2xl"
