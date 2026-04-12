@@ -583,11 +583,11 @@ export default function SolutionsDashboard() {
           Every TECH FREE AHU is built from precision-engineered subsystems, each independently certified to international standards.
         </p>
 
-        {/* Main components image */}
-        <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden mt-8 bg-white shadow-lg">
+        {/* Main components diagram */}
+        <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mt-8 bg-slate-50 shadow-lg">
           <Image
-            src="/images/products/integrated-ahu.jpg"
-            alt="TECH FREE Integrated AHU - main components overview"
+            src="/images/solutions/ahu-components-diagram.jpg"
+            alt="TECH FREE AHU - labeled component diagram"
             fill
             className="object-contain"
             sizes="(max-width: 768px) 100vw, 80vw"
