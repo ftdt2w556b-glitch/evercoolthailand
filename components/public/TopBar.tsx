@@ -37,7 +37,7 @@ export default function TopBar() {
             width={130}
             height={40}
             className="h-8 w-auto"
-            style={{ filter: "brightness(2.5) saturate(1.2)" }}
+            style={{ filter: "brightness(0) invert(1)" }}
             priority
           />
         </Link>
