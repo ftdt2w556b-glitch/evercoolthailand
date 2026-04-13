@@ -26,10 +26,10 @@ function StatCard({ label, value, href, color, icon }: {
 export default async function DashboardPage() {
   const supabase = await createSupabaseServerClient();
   const { data: { user } } = await supabase.auth.getUser();
-  if (!user) redirect("/admin/login");
+  if (!user) redirect("/login");
 
   const { data: profile } = await supabase.from("profiles").select("role, name").eq("id", user.id).maybeSingle();
-  if (!profile) redirect("/admin/login");
+  if (!profile) redirect("/login");
 
   const role = profile.role as Role;
   const admin = createAdminClient();

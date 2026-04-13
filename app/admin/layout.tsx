@@ -20,7 +20,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
   if (!profile || !profile.is_active) {
     await supabase.auth.signOut();
-    redirect("/admin/login");
+    redirect("/login");
   }
 
   return (

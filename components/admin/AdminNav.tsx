@@ -54,7 +54,7 @@ export default function AdminNav({
   async function handleSignOut() {
     setSigningOut(true);
     await fetch("/api/admin/logout", { method: "POST" });
-    window.location.href = "/admin/login";
+    window.location.href = "/login";
   }
 
   return (

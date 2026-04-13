@@ -4,8 +4,8 @@ import { NextResponse, type NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Only protect /admin routes (not /admin/login)
-  if (!pathname.startsWith("/admin") || pathname.startsWith("/admin/login")) {
+  // Only protect /admin routes
+  if (!pathname.startsWith("/admin")) {
     return NextResponse.next();
   }
 
@@ -38,7 +38,7 @@ export async function middleware(request: NextRequest) {
 
   if (!user) {
     const loginUrl = request.nextUrl.clone();
-    loginUrl.pathname = "/admin/login";
+    loginUrl.pathname = "/login";
     return NextResponse.redirect(loginUrl);
   }
 
@@ -51,7 +51,7 @@ export async function middleware(request: NextRequest) {
 
   if (!profile) {
     const loginUrl = request.nextUrl.clone();
-    loginUrl.pathname = "/admin/login";
+    loginUrl.pathname = "/login";
     return NextResponse.redirect(loginUrl);
   }
 
