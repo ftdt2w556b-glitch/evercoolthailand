@@ -50,7 +50,7 @@ const PRODUCTS: Product[] = [
     name: "Hygienic Air Handling Unit",
     category: "Air Handling Units",
     applications: ["Medical", "Industrial"],
-    image: "/images/products/ahu-horizontal.png",
+    image: "/images/products/hygienicairhandlingunit.png",
     specs: [
       "Stainless steel internals, anti-corrosion treatment",
       "VDI 6022 certified for hospital and pharma use",
@@ -78,7 +78,7 @@ const PRODUCTS: Product[] = [
     name: "Variable Refrigerant Flow AHU",
     category: "Air Handling Units",
     applications: ["Commercial", "Medical"],
-    image: "/images/products/ahu-vertical.png",
+    image: "/images/products/vrf-ahu.png",
     specs: [
       "Direct expansion VRF coil for inverter-driven systems",
       "EC fan motor, part-load efficiency optimised",
@@ -92,7 +92,7 @@ const PRODUCTS: Product[] = [
     name: "Pre-Cooling Air Handling Unit",
     category: "Air Handling Units",
     applications: ["Commercial", "Medical", "Industrial"],
-    image: "/images/products/acoustic-ec-fan-cube.jpg",
+    image: "/images/products/pre-cooling-ahu.png",
     specs: [
       "Penta-post Al frame, double-skin PU insulation, thermo-break eliminates cold bridge",
       "Fire Rated UL94V0, air leakage <0.4 l/s.sqm, EN 1886:2007 compliant",
@@ -136,7 +136,7 @@ const PRODUCTS: Product[] = [
     name: "TFF Series Fresh Air Unit",
     category: "Fresh Air Systems",
     applications: ["Commercial", "Industrial"],
-    image: "/images/products/fresh-air-unit.png",
+    image: "/images/products/fresh-air-ec.png",
     specs: [
       "EC fan motor delivers 20-30% energy savings",
       "Low noise operation from 28 dB(A)",
@@ -178,7 +178,7 @@ const PRODUCTS: Product[] = [
     name: "Dual System Heat Recovery Unit",
     category: "Fresh Air Systems",
     applications: ["Commercial", "Medical", "Industrial"],
-    image: "/images/products/dual-system-heat-recovery.jpg",
+    image: "/images/products/dual-heat-recovery.jpeg",
     specs: [
       "Sub-cooling ensures precise moisture removal",
       "Sensible reheat controls relative humidity precisely",
@@ -223,7 +223,7 @@ const PRODUCTS: Product[] = [
     name: "Packaged Condensing Unit",
     category: "Condensing Units",
     applications: ["Commercial", "Industrial"],
-    image: "/images/products/packaged-unit.png",
+    image: "/images/products/packaged-outdoor.png",
     specs: [
       "R410A scroll compressor, up to 30 tons cooling",
       "Air-cooled design, ideal where water supply is limited",
@@ -267,7 +267,7 @@ const PRODUCTS: Product[] = [
     name: "EC Fan Coil Unit",
     category: "Components",
     applications: ["Commercial"],
-    image: "/images/products/ec-fan-coil.png",
+    image: "/images/products/ec-fan-coil-unit.png",
     specs: [
       "EC motor variable speed matched to thermal demand",
       "Low noise from 26 dB(A), ceiling or floor mounting",
