@@ -8,22 +8,34 @@ export const dynamic = "force-dynamic";
 
 type Role = "admin" | "sales" | "manager" | "owner" | "technician" | "staff";
 
-function StatCard({ label, value, href, color, icon }: {
-  label: string; value: number | string; href?: string; color: string; icon?: React.ReactNode;
+const ALL_ROLES: Role[] = ["admin", "owner", "manager", "sales", "technician", "staff"];
+
+const ROLE_COLOR: Record<Role, string> = {
+  admin:      "bg-red-500/20 text-red-400 border-red-500/30",
+  owner:      "bg-purple-500/20 text-purple-400 border-purple-500/30",
+  manager:    "bg-amber-500/20 text-amber-400 border-amber-500/30",
+  sales:      "bg-blue-500/20 text-blue-400 border-blue-500/30",
+  technician: "bg-teal-500/20 text-teal-400 border-teal-500/30",
+  staff:      "bg-gray-500/20 text-gray-400 border-gray-500/30",
+};
+
+function StatCard({ label, value, href, color }: {
+  label: string; value: number | string; href?: string; color: string;
 }) {
   const inner = (
     <div className="bg-ec-card rounded-2xl border border-ec-border p-4 hover:border-ec-teal/30 transition-all h-full">
-      <div className="flex items-start justify-between mb-3">
-        <p className="text-xs font-semibold text-ec-text-muted">{label}</p>
-        {icon && <span className="text-ec-text-muted/40">{icon}</span>}
-      </div>
+      <p className="text-xs font-semibold text-ec-text-muted mb-3">{label}</p>
       <p className={`text-3xl font-bold ${color}`}>{value}</p>
     </div>
   );
   return href ? <Link href={href}>{inner}</Link> : <div>{inner}</div>;
 }
 
-export default async function DashboardPage() {
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ preview?: string }>;
+}) {
   const supabase = await createSupabaseServerClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
@@ -31,10 +43,14 @@ export default async function DashboardPage() {
   const { data: profile } = await supabase.from("profiles").select("role, name").eq("id", user.id).maybeSingle();
   if (!profile) redirect("/login");
 
-  const role = profile.role as Role;
+  const actualRole = profile.role as Role;
+  const params = await searchParams;
+  const previewParam = params?.preview as Role | undefined;
+  const isPreviewing = actualRole === "admin" && previewParam && ALL_ROLES.includes(previewParam);
+  const role: Role = isPreviewing ? previewParam! : actualRole;
+
   const admin = createAdminClient();
 
-  // Fetch data relevant to the role
   const [
     { count: newQuotes },
     { count: newMessages },
@@ -55,10 +71,42 @@ export default async function DashboardPage() {
 
   return (
     <div>
+      {/* ── Admin role preview bar ────────────────────── */}
+      {actualRole === "admin" && (
+        <div className="mb-6 bg-ec-card border border-ec-border rounded-2xl p-3">
+          <p className="text-[10px] font-bold text-ec-text-muted uppercase tracking-widest mb-2.5">
+            Preview as role
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {ALL_ROLES.map((r) => (
+              <Link
+                key={r}
+                href={r === "admin" ? "/admin/dashboard" : `/admin/dashboard?preview=${r}`}
+                className={`text-xs font-semibold px-3 py-1 rounded-lg border capitalize transition-all ${
+                  role === r
+                    ? ROLE_COLOR[r]
+                    : "bg-transparent text-ec-text-muted border-ec-border hover:border-ec-teal/40 hover:text-ec-text"
+                }`}
+              >
+                {r}
+              </Link>
+            ))}
+          </div>
+          {isPreviewing && (
+            <p className="text-[10px] text-ec-text-muted mt-2">
+              Previewing as <span className="font-semibold capitalize">{role}</span> —{" "}
+              <Link href="/admin/dashboard" className="text-ec-teal hover:underline">back to your view</Link>
+            </p>
+          )}
+        </div>
+      )}
+
       {/* Header */}
       <div className="mb-6">
         <h1 className="text-xl font-bold text-ec-text">{greeting}</h1>
-        <p className="text-xs text-ec-text-muted mt-0.5 capitalize">{role} dashboard · Evercool Thailand</p>
+        <p className="text-xs text-ec-text-muted mt-0.5 capitalize">
+          {isPreviewing ? `Previewing ${role} dashboard` : `${role} dashboard`} · Evercool Thailand
+        </p>
       </div>
 
       {/* ── ADMIN view ─────────────────────────────────── */}
@@ -125,13 +173,11 @@ export default async function DashboardPage() {
 
       {/* ── SALES view ─────────────────────────────────── */}
       {role === "sales" && (
-        <>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-            <StatCard label="New Quotes" value={newQuotes ?? 0} href="/admin/quotes" color="text-blue-400" />
-            <StatCard label="Accepted" value={acceptedQuotes ?? 0} href="/admin/quotes" color="text-green-400" />
-            <StatCard label="New Messages" value={newMessages ?? 0} href="/admin/messages" color="text-purple-400" />
-          </div>
-        </>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+          <StatCard label="New Quotes" value={newQuotes ?? 0} href="/admin/quotes" color="text-blue-400" />
+          <StatCard label="Accepted" value={acceptedQuotes ?? 0} href="/admin/quotes" color="text-green-400" />
+          <StatCard label="New Messages" value={newMessages ?? 0} href="/admin/messages" color="text-purple-400" />
+        </div>
       )}
 
       {/* ── TECHNICIAN / STAFF view ────────────────────── */}
@@ -142,7 +188,7 @@ export default async function DashboardPage() {
         </div>
       )}
 
-      {/* Recent quotes — visible to admin, sales, manager, owner */}
+      {/* Recent quotes + messages — admin, sales, manager, owner */}
       {["admin", "sales", "manager", "owner"].includes(role) && (
         <div className="grid sm:grid-cols-2 gap-6">
           <div>
