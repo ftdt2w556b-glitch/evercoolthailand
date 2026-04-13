@@ -78,7 +78,7 @@ const PRODUCTS: Product[] = [
     name: "Variable Refrigerant Flow AHU",
     category: "Air Handling Units",
     applications: ["Commercial", "Medical"],
-    image: "/images/products/vrf-ahu.png",
+    image: "/images/products/Variable Refrigerant Flow AHU.png",
     specs: [
       "Direct expansion VRF coil for inverter-driven systems",
       "EC fan motor, part-load efficiency optimised",
@@ -106,7 +106,7 @@ const PRODUCTS: Product[] = [
     name: "Acoustic EC Fan Cube Module",
     category: "Air Handling Units",
     applications: ["Commercial", "Medical", "Industrial"],
-    image: "/images/products/acoustic-ec-fan-cube.jpg",
+    image: "/images/products/acoustic-ec-fan-cube.png",
     specs: [
       "Sound insulation panel, proven low-frequency absorption and noise reduction",
       "Free combination modular design, compact and easy assembly",
@@ -178,7 +178,7 @@ const PRODUCTS: Product[] = [
     name: "Dual System Heat Recovery Unit",
     category: "Fresh Air Systems",
     applications: ["Commercial", "Medical", "Industrial"],
-    image: "/images/products/dual-heat-recovery.jpeg",
+    image: "/images/products/Dual System Heat Recovery Unit.png",
     specs: [
       "Sub-cooling ensures precise moisture removal",
       "Sensible reheat controls relative humidity precisely",
@@ -207,7 +207,7 @@ const PRODUCTS: Product[] = [
     name: "Cabinet Fresh Air System X-Series",
     category: "Fresh Air Systems",
     applications: ["Commercial", "Medical"],
-    image: "/images/products/cabinet-fresh-air.jpg",
+    image: "/images/products/Cabinet Fresh Air System X-Series.png",
     specs: [
       "Triple filtration: G4 primary, F7 medium, H13 HEPA filter",
       "Real-time PM2.5 & CO2 monitoring, smart remote control via mobile",
