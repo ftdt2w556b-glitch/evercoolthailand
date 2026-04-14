@@ -29,8 +29,12 @@ export const metadata: Metadata = {
     "Thailand's trusted indoor air quality and HVAC specialists. AC installation, repair, maintenance, air purifiers, and custom solutions for homes, offices, and factories.",
   manifest: "/manifest.json",
   icons: {
-    icon: [{ url: "/icons/icon-192.png", type: "image/png", sizes: "192x192" }],
-    shortcut: "/icons/icon-192.png",
+    icon: [
+      { url: "/icons/icon.svg", type: "image/svg+xml" },
+      { url: "/icons/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icons/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/icons/icon.svg",
     apple: "/icons/icon-192.png",
   },
   appleWebApp: {
