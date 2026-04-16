@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient, createAdminClient } from "@/lib/supabase/server";
+import StaffInbox from "@/components/admin/StaffInbox";
 
 export const metadata: Metadata = { title: "Dashboard | Evercool Portal" };
 export const dynamic = "force-dynamic";
@@ -58,6 +59,7 @@ export default async function DashboardPage({
     { count: acceptedQuotes },
     { data: recentQuotes },
     { data: recentMessages },
+    { data: staffMessages },
   ] = await Promise.all([
     admin.from("quotes").select("*", { count: "exact", head: true }).eq("status", "new"),
     admin.from("contact_messages").select("*", { count: "exact", head: true }).eq("status", "new"),
@@ -65,6 +67,9 @@ export default async function DashboardPage({
     admin.from("quotes").select("*", { count: "exact", head: true }).eq("status", "accepted"),
     admin.from("quotes").select("id, name, service_type, status, created_at, property_type").order("created_at", { ascending: false }).limit(6),
     admin.from("contact_messages").select("id, name, subject, status, created_at").order("created_at", { ascending: false }).limit(5),
+    actualRole === "admin"
+      ? admin.from("staff_messages").select("*").order("created_at", { ascending: false }).limit(20)
+      : Promise.resolve({ data: [] }),
   ]);
 
   const greeting = profile.name ? `Welcome back, ${profile.name.split(" ")[0]}` : "Welcome back";
@@ -186,6 +191,11 @@ export default async function DashboardPage({
           <p className="text-sm font-semibold text-ec-text mb-2">Your workspace is being set up</p>
           <p className="text-xs text-ec-text-muted">Job assignments and field tools will appear here shortly.</p>
         </div>
+      )}
+
+      {/* Staff inbox — admin only */}
+      {actualRole === "admin" && !isPreviewing && staffMessages && staffMessages.length > 0 && (
+        <StaffInbox initial={staffMessages as never} />
       )}
 
       {/* Recent quotes + messages — admin, sales, manager, owner */}

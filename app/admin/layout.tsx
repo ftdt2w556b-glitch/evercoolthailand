@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import AdminNav from "@/components/admin/AdminNav";
+import HelpButton from "@/components/admin/HelpButton";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createSupabaseServerClient();
@@ -33,6 +34,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <div className="max-w-[1100px] mx-auto px-4 py-6">
         {children}
       </div>
+      {/* Help button — visible to all non-admin roles */}
+      {profile.role !== "admin" && <HelpButton />}
     </div>
   );
 }
